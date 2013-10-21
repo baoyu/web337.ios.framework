@@ -10,23 +10,7 @@
 		FE8F91D01814CE3D00304EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CF1814CE3D00304EDE /* Foundation.framework */; };
 		FE8F91D51814CE3D00304EDE /* web337.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; };
 		FE8F91D71814CE3D00304EDE /* web337.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F91D61814CE3D00304EDE /* web337.m */; };
-		FE8F91DE1814CE3D00304EDE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91DD1814CE3D00304EDE /* XCTest.framework */; };
-		FE8F91DF1814CE3D00304EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CF1814CE3D00304EDE /* Foundation.framework */; };
-		FE8F91E11814CE3D00304EDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91E01814CE3D00304EDE /* UIKit.framework */; };
-		FE8F91E41814CE3D00304EDE /* libweb337.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CC1814CE3D00304EDE /* libweb337.a */; };
-		FE8F91EA1814CE3D00304EDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8F91E81814CE3D00304EDE /* InfoPlist.strings */; };
-		FE8F91EC1814CE3D00304EDE /* web337Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F91EB1814CE3D00304EDE /* web337Tests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FE8F91E21814CE3D00304EDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FE8F91C41814CE3D00304EDE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FE8F91CB1814CE3D00304EDE;
-			remoteInfo = web337;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FE8F91CA1814CE3D00304EDE /* CopyFiles */ = {
@@ -47,12 +31,8 @@
 		FE8F91D31814CE3D00304EDE /* web337-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "web337-Prefix.pch"; sourceTree = "<group>"; };
 		FE8F91D41814CE3D00304EDE /* web337.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = web337.h; sourceTree = "<group>"; };
 		FE8F91D61814CE3D00304EDE /* web337.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = web337.m; sourceTree = "<group>"; };
-		FE8F91DC1814CE3D00304EDE /* web337Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = web337Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8F91DD1814CE3D00304EDE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FE8F91E01814CE3D00304EDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		FE8F91E71814CE3D00304EDE /* web337Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "web337Tests-Info.plist"; sourceTree = "<group>"; };
-		FE8F91E91814CE3D00304EDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FE8F91EB1814CE3D00304EDE /* web337Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = web337Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,17 +44,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE8F91D91814CE3D00304EDE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE8F91E41814CE3D00304EDE /* libweb337.a in Frameworks */,
-				FE8F91DE1814CE3D00304EDE /* XCTest.framework in Frameworks */,
-				FE8F91E11814CE3D00304EDE /* UIKit.framework in Frameworks */,
-				FE8F91DF1814CE3D00304EDE /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				FE8F91D11814CE3D00304EDE /* web337 */,
-				FE8F91E51814CE3D00304EDE /* web337Tests */,
 				FE8F91CE1814CE3D00304EDE /* Frameworks */,
 				FE8F91CD1814CE3D00304EDE /* Products */,
 			);
@@ -92,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				FE8F91CC1814CE3D00304EDE /* libweb337.a */,
-				FE8F91DC1814CE3D00304EDE /* web337Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,24 +92,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FE8F91E51814CE3D00304EDE /* web337Tests */ = {
-			isa = PBXGroup;
-			children = (
-				FE8F91EB1814CE3D00304EDE /* web337Tests.m */,
-				FE8F91E61814CE3D00304EDE /* Supporting Files */,
-			);
-			path = web337Tests;
-			sourceTree = "<group>";
-		};
-		FE8F91E61814CE3D00304EDE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FE8F91E71814CE3D00304EDE /* web337Tests-Info.plist */,
-				FE8F91E81814CE3D00304EDE /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,24 +111,6 @@
 			productName = web337;
 			productReference = FE8F91CC1814CE3D00304EDE /* libweb337.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		FE8F91DB1814CE3D00304EDE /* web337Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FE8F91F21814CE3D00304EDE /* Build configuration list for PBXNativeTarget "web337Tests" */;
-			buildPhases = (
-				FE8F91D81814CE3D00304EDE /* Sources */,
-				FE8F91D91814CE3D00304EDE /* Frameworks */,
-				FE8F91DA1814CE3D00304EDE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FE8F91E31814CE3D00304EDE /* PBXTargetDependency */,
-			);
-			name = web337Tests;
-			productName = web337Tests;
-			productReference = FE8F91DC1814CE3D00304EDE /* web337Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -203,21 +134,9 @@
 			projectRoot = "";
 			targets = (
 				FE8F91CB1814CE3D00304EDE /* web337 */,
-				FE8F91DB1814CE3D00304EDE /* web337Tests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		FE8F91DA1814CE3D00304EDE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE8F91EA1814CE3D00304EDE /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE8F91C81814CE3D00304EDE /* Sources */ = {
@@ -228,34 +147,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE8F91D81814CE3D00304EDE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE8F91EC1814CE3D00304EDE /* web337Tests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FE8F91E31814CE3D00304EDE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FE8F91CB1814CE3D00304EDE /* web337 */;
-			targetProxy = FE8F91E21814CE3D00304EDE /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		FE8F91E81814CE3D00304EDE /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FE8F91E91814CE3D00304EDE /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FE8F91ED1814CE3D00304EDE /* Debug */ = {
@@ -352,44 +244,6 @@
 			};
 			name = Release;
 		};
-		FE8F91F31814CE3D00304EDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "web337/web337-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "web337Tests/web337Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		FE8F91F41814CE3D00304EDE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "web337/web337-Prefix.pch";
-				INFOPLIST_FILE = "web337Tests/web337Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,14 +263,7 @@
 				FE8F91F11814CE3D00304EDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		FE8F91F21814CE3D00304EDE /* Build configuration list for PBXNativeTarget "web337Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FE8F91F31814CE3D00304EDE /* Debug */,
-				FE8F91F41814CE3D00304EDE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
