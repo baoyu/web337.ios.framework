@@ -4,10 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Framework.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>web337.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>web337Resources.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -18,6 +28,16 @@
 			<true/>
 		</dict>
 		<key>FE8F91DB1814CE3D00304EDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE8F91F81814D2DA00304EDE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE8F92021814D45200304EDE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
