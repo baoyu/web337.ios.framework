@@ -6,11 +6,77 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		FE8F91F81814D2DA00304EDE /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FE8F91F91814D2DA00304EDE /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				FE8F91FE1814D2F900304EDE /* ShellScript */,
+			);
+			dependencies = (
+				FE8F92261814D58200304EDE /* PBXTargetDependency */,
+				FE8F91FD1814D2EA00304EDE /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		FE8F91D01814CE3D00304EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CF1814CE3D00304EDE /* Foundation.framework */; };
 		FE8F91D51814CE3D00304EDE /* web337.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; };
-		FE8F91D71814CE3D00304EDE /* web337.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F91D61814CE3D00304EDE /* web337.m */; };
+		FE8F91F61814CFF000304EDE /* web337.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8F92051814D45200304EDE /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F92041814D45200304EDE /* CoreFoundation.framework */; };
+		FE8F920B1814D45200304EDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92091814D45200304EDE /* InfoPlist.strings */; };
+		FE8F921B1814D56D00304EDE /* 337_lefta.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92111814D56D00304EDE /* 337_lefta.png */; };
+		FE8F921C1814D56D00304EDE /* 337_lefta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92121814D56D00304EDE /* 337_lefta@2x.png */; };
+		FE8F921D1814D56D00304EDE /* 337_lock.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92131814D56D00304EDE /* 337_lock.png */; };
+		FE8F921E1814D56D00304EDE /* 337_lock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92141814D56D00304EDE /* 337_lock@2x.png */; };
+		FE8F921F1814D56D00304EDE /* 337_righta.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92151814D56D00304EDE /* 337_righta.png */; };
+		FE8F92201814D56D00304EDE /* 337_righta@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92161814D56D00304EDE /* 337_righta@2x.png */; };
+		FE8F92211814D56D00304EDE /* 337logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92171814D56D00304EDE /* 337logo.png */; };
+		FE8F92221814D56D00304EDE /* 337logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92181814D56D00304EDE /* 337logo@2x.png */; };
+		FE8F92231814D56D00304EDE /* FBLoginViewButtonE.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F92191814D56D00304EDE /* FBLoginViewButtonE.png */; };
+		FE8F92241814D56D00304EDE /* FBLoginViewButtonE@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8F921A1814D56D00304EDE /* FBLoginViewButtonE@2x.png */; };
+		FE8F922A1814D6EC00304EDE /* ElxUser.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92281814D6EC00304EDE /* ElxUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8F922B1814D6EC00304EDE /* ElxUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92291814D6EC00304EDE /* ElxUser.m */; };
+		FE8F922E1814D7A900304EDE /* ElxError.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F922C1814D7A900304EDE /* ElxError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8F922F1814D7A900304EDE /* ElxError.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F922D1814D7A900304EDE /* ElxError.m */; };
+		FE8F92411814D7BF00304EDE /* ElxButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92311814D7BF00304EDE /* ElxButton.h */; };
+		FE8F92421814D7BF00304EDE /* ElxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92321814D7BF00304EDE /* ElxButton.m */; };
+		FE8F92431814D7BF00304EDE /* ElxLoginInputCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */; };
+		FE8F92441814D7BF00304EDE /* ElxLoginInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */; };
+		FE8F92461814D7BF00304EDE /* ElxStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92361814D7BF00304EDE /* ElxStrings.h */; };
+		FE8F92471814D7BF00304EDE /* ElxStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92371814D7BF00304EDE /* ElxStrings.m */; };
+		FE8F92481814D7BF00304EDE /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92381814D7BF00304EDE /* MBProgressHUD.h */; };
+		FE8F92491814D7BF00304EDE /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92391814D7BF00304EDE /* MBProgressHUD.m */; };
+		FE8F924A1814D7BF00304EDE /* OHURLLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923A1814D7BF00304EDE /* OHURLLoader.h */; };
+		FE8F924B1814D7BF00304EDE /* OHURLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F923B1814D7BF00304EDE /* OHURLLoader.m */; };
+		FE8F924C1814D7BF00304EDE /* SZJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923C1814D7BF00304EDE /* SZJsonParser.h */; };
+		FE8F924D1814D7BF00304EDE /* SZJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F923D1814D7BF00304EDE /* SZJsonParser.m */; };
+		FE8F924E1814D7BF00304EDE /* ElxConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923E1814D7BF00304EDE /* ElxConfig.h */; };
+		FE8F924F1814D7BF00304EDE /* ElxFBLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */; };
+		FE8F92501814D7BF00304EDE /* ElxFBLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92401814D7BF00304EDE /* ElxFBLogin.m */; };
+		FE8F92531814D7C800304EDE /* ElxWeb337.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92511814D7C800304EDE /* ElxWeb337.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8F92541814D7C800304EDE /* ElxWeb337.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92521814D7C800304EDE /* ElxWeb337.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE8F91FC1814D2EA00304EDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE8F91C41814CE3D00304EDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8F91CB1814CE3D00304EDE;
+			remoteInfo = web337;
+		};
+		FE8F92251814D58200304EDE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE8F91C41814CE3D00304EDE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8F92021814D45200304EDE;
+			remoteInfo = web337Resources;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FE8F91CA1814CE3D00304EDE /* CopyFiles */ = {
@@ -30,9 +96,43 @@
 		FE8F91CF1814CE3D00304EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE8F91D31814CE3D00304EDE /* web337-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "web337-Prefix.pch"; sourceTree = "<group>"; };
 		FE8F91D41814CE3D00304EDE /* web337.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = web337.h; sourceTree = "<group>"; };
-		FE8F91D61814CE3D00304EDE /* web337.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = web337.m; sourceTree = "<group>"; };
 		FE8F91DD1814CE3D00304EDE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		FE8F91E01814CE3D00304EDE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		FE8F92031814D45200304EDE /* web337.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = web337.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8F92041814D45200304EDE /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FE8F92081814D45200304EDE /* web337Resources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "web337Resources-Info.plist"; sourceTree = "<group>"; };
+		FE8F920A1814D45200304EDE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FE8F920C1814D45200304EDE /* web337Resources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "web337Resources-Prefix.pch"; sourceTree = "<group>"; };
+		FE8F92111814D56D00304EDE /* 337_lefta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_lefta.png; sourceTree = "<group>"; };
+		FE8F92121814D56D00304EDE /* 337_lefta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_lefta@2x.png"; sourceTree = "<group>"; };
+		FE8F92131814D56D00304EDE /* 337_lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_lock.png; sourceTree = "<group>"; };
+		FE8F92141814D56D00304EDE /* 337_lock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_lock@2x.png"; sourceTree = "<group>"; };
+		FE8F92151814D56D00304EDE /* 337_righta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_righta.png; sourceTree = "<group>"; };
+		FE8F92161814D56D00304EDE /* 337_righta@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_righta@2x.png"; sourceTree = "<group>"; };
+		FE8F92171814D56D00304EDE /* 337logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337logo.png; sourceTree = "<group>"; };
+		FE8F92181814D56D00304EDE /* 337logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337logo@2x.png"; sourceTree = "<group>"; };
+		FE8F92191814D56D00304EDE /* FBLoginViewButtonE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLoginViewButtonE.png; sourceTree = "<group>"; };
+		FE8F921A1814D56D00304EDE /* FBLoginViewButtonE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLoginViewButtonE@2x.png"; sourceTree = "<group>"; };
+		FE8F92281814D6EC00304EDE /* ElxUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxUser.h; sourceTree = "<group>"; };
+		FE8F92291814D6EC00304EDE /* ElxUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxUser.m; sourceTree = "<group>"; };
+		FE8F922C1814D7A900304EDE /* ElxError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxError.h; sourceTree = "<group>"; };
+		FE8F922D1814D7A900304EDE /* ElxError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxError.m; sourceTree = "<group>"; };
+		FE8F92311814D7BF00304EDE /* ElxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxButton.h; sourceTree = "<group>"; };
+		FE8F92321814D7BF00304EDE /* ElxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxButton.m; sourceTree = "<group>"; };
+		FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxLoginInputCell.h; sourceTree = "<group>"; };
+		FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxLoginInputCell.m; sourceTree = "<group>"; };
+		FE8F92361814D7BF00304EDE /* ElxStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxStrings.h; sourceTree = "<group>"; };
+		FE8F92371814D7BF00304EDE /* ElxStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxStrings.m; sourceTree = "<group>"; };
+		FE8F92381814D7BF00304EDE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FE8F92391814D7BF00304EDE /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FE8F923A1814D7BF00304EDE /* OHURLLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHURLLoader.h; sourceTree = "<group>"; };
+		FE8F923B1814D7BF00304EDE /* OHURLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHURLLoader.m; sourceTree = "<group>"; };
+		FE8F923C1814D7BF00304EDE /* SZJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZJsonParser.h; sourceTree = "<group>"; };
+		FE8F923D1814D7BF00304EDE /* SZJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZJsonParser.m; sourceTree = "<group>"; };
+		FE8F923E1814D7BF00304EDE /* ElxConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxConfig.h; sourceTree = "<group>"; };
+		FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxFBLogin.h; sourceTree = "<group>"; };
+		FE8F92401814D7BF00304EDE /* ElxFBLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxFBLogin.m; sourceTree = "<group>"; };
+		FE8F92511814D7C800304EDE /* ElxWeb337.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxWeb337.h; sourceTree = "<group>"; };
+		FE8F92521814D7C800304EDE /* ElxWeb337.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxWeb337.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +144,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FE8F92001814D45200304EDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F92051814D45200304EDE /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -51,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8F91D11814CE3D00304EDE /* web337 */,
+				FE8F92061814D45200304EDE /* web337Resources */,
 				FE8F91CE1814CE3D00304EDE /* Frameworks */,
 				FE8F91CD1814CE3D00304EDE /* Products */,
 			);
@@ -60,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8F91CC1814CE3D00304EDE /* libweb337.a */,
+				FE8F92031814D45200304EDE /* web337.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,7 +179,7 @@
 			children = (
 				FE8F91CF1814CE3D00304EDE /* Foundation.framework */,
 				FE8F91DD1814CE3D00304EDE /* XCTest.framework */,
-				FE8F91E01814CE3D00304EDE /* UIKit.framework */,
+				FE8F92041814D45200304EDE /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -77,8 +187,14 @@
 		FE8F91D11814CE3D00304EDE /* web337 */ = {
 			isa = PBXGroup;
 			children = (
+				FE8F92301814D7B200304EDE /* lib */,
+				FE8F922C1814D7A900304EDE /* ElxError.h */,
+				FE8F922D1814D7A900304EDE /* ElxError.m */,
+				FE8F92281814D6EC00304EDE /* ElxUser.h */,
+				FE8F92291814D6EC00304EDE /* ElxUser.m */,
+				FE8F92511814D7C800304EDE /* ElxWeb337.h */,
+				FE8F92521814D7C800304EDE /* ElxWeb337.m */,
 				FE8F91D41814CE3D00304EDE /* web337.h */,
-				FE8F91D61814CE3D00304EDE /* web337.m */,
 				FE8F91D21814CE3D00304EDE /* Supporting Files */,
 			);
 			path = web337;
@@ -92,7 +208,88 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FE8F92061814D45200304EDE /* web337Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F92101814D56D00304EDE /* images */,
+				FE8F92071814D45200304EDE /* Supporting Files */,
+			);
+			path = web337Resources;
+			sourceTree = "<group>";
+		};
+		FE8F92071814D45200304EDE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F92081814D45200304EDE /* web337Resources-Info.plist */,
+				FE8F92091814D45200304EDE /* InfoPlist.strings */,
+				FE8F920C1814D45200304EDE /* web337Resources-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE8F92101814D56D00304EDE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F92111814D56D00304EDE /* 337_lefta.png */,
+				FE8F92121814D56D00304EDE /* 337_lefta@2x.png */,
+				FE8F92131814D56D00304EDE /* 337_lock.png */,
+				FE8F92141814D56D00304EDE /* 337_lock@2x.png */,
+				FE8F92151814D56D00304EDE /* 337_righta.png */,
+				FE8F92161814D56D00304EDE /* 337_righta@2x.png */,
+				FE8F92171814D56D00304EDE /* 337logo.png */,
+				FE8F92181814D56D00304EDE /* 337logo@2x.png */,
+				FE8F92191814D56D00304EDE /* FBLoginViewButtonE.png */,
+				FE8F921A1814D56D00304EDE /* FBLoginViewButtonE@2x.png */,
+			);
+			name = images;
+			path = ../../Desktop/images;
+			sourceTree = "<group>";
+		};
+		FE8F92301814D7B200304EDE /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F92311814D7BF00304EDE /* ElxButton.h */,
+				FE8F92321814D7BF00304EDE /* ElxButton.m */,
+				FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */,
+				FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */,
+				FE8F92361814D7BF00304EDE /* ElxStrings.h */,
+				FE8F92371814D7BF00304EDE /* ElxStrings.m */,
+				FE8F92381814D7BF00304EDE /* MBProgressHUD.h */,
+				FE8F92391814D7BF00304EDE /* MBProgressHUD.m */,
+				FE8F923A1814D7BF00304EDE /* OHURLLoader.h */,
+				FE8F923B1814D7BF00304EDE /* OHURLLoader.m */,
+				FE8F923C1814D7BF00304EDE /* SZJsonParser.h */,
+				FE8F923D1814D7BF00304EDE /* SZJsonParser.m */,
+				FE8F923E1814D7BF00304EDE /* ElxConfig.h */,
+				FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */,
+				FE8F92401814D7BF00304EDE /* ElxFBLogin.m */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FE8F91F51814CFE900304EDE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F91F61814CFF000304EDE /* web337.h in Headers */,
+				FE8F922E1814D7A900304EDE /* ElxError.h in Headers */,
+				FE8F92531814D7C800304EDE /* ElxWeb337.h in Headers */,
+				FE8F922A1814D6EC00304EDE /* ElxUser.h in Headers */,
+				FE8F924E1814D7BF00304EDE /* ElxConfig.h in Headers */,
+				FE8F92461814D7BF00304EDE /* ElxStrings.h in Headers */,
+				FE8F924C1814D7BF00304EDE /* SZJsonParser.h in Headers */,
+				FE8F924F1814D7BF00304EDE /* ElxFBLogin.h in Headers */,
+				FE8F92481814D7BF00304EDE /* MBProgressHUD.h in Headers */,
+				FE8F924A1814D7BF00304EDE /* OHURLLoader.h in Headers */,
+				FE8F92411814D7BF00304EDE /* ElxButton.h in Headers */,
+				FE8F92431814D7BF00304EDE /* ElxLoginInputCell.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		FE8F91CB1814CE3D00304EDE /* web337 */ = {
@@ -102,6 +299,8 @@
 				FE8F91C81814CE3D00304EDE /* Sources */,
 				FE8F91C91814CE3D00304EDE /* Frameworks */,
 				FE8F91CA1814CE3D00304EDE /* CopyFiles */,
+				FE8F91F51814CFE900304EDE /* Headers */,
+				FE8F91F71814D19900304EDE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -111,6 +310,23 @@
 			productName = web337;
 			productReference = FE8F91CC1814CE3D00304EDE /* libweb337.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		FE8F92021814D45200304EDE /* web337Resources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8F920D1814D45200304EDE /* Build configuration list for PBXNativeTarget "web337Resources" */;
+			buildPhases = (
+				FE8F91FF1814D45200304EDE /* Sources */,
+				FE8F92001814D45200304EDE /* Frameworks */,
+				FE8F92011814D45200304EDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = web337Resources;
+			productName = web337Resources;
+			productReference = FE8F92031814D45200304EDE /* web337.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,20 +350,112 @@
 			projectRoot = "";
 			targets = (
 				FE8F91CB1814CE3D00304EDE /* web337 */,
+				FE8F91F81814D2DA00304EDE /* Framework */,
+				FE8F92021814D45200304EDE /* web337Resources */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE8F92011814D45200304EDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F92201814D56D00304EDE /* 337_righta@2x.png in Resources */,
+				FE8F921F1814D56D00304EDE /* 337_righta.png in Resources */,
+				FE8F921D1814D56D00304EDE /* 337_lock.png in Resources */,
+				FE8F92221814D56D00304EDE /* 337logo@2x.png in Resources */,
+				FE8F92231814D56D00304EDE /* FBLoginViewButtonE.png in Resources */,
+				FE8F921B1814D56D00304EDE /* 337_lefta.png in Resources */,
+				FE8F92211814D56D00304EDE /* 337logo.png in Resources */,
+				FE8F92241814D56D00304EDE /* FBLoginViewButtonE@2x.png in Resources */,
+				FE8F921C1814D56D00304EDE /* 337_lefta@2x.png in Resources */,
+				FE8F920B1814D45200304EDE /* InfoPlist.strings in Resources */,
+				FE8F921E1814D56D00304EDE /* 337_lock@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FE8F91F71814D19900304EDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"";
+		};
+		FE8F91FE1814D2F900304EDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nlipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FE8F91C81814CE3D00304EDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE8F91D71814CE3D00304EDE /* web337.m in Sources */,
+				FE8F92441814D7BF00304EDE /* ElxLoginInputCell.m in Sources */,
+				FE8F924B1814D7BF00304EDE /* OHURLLoader.m in Sources */,
+				FE8F92491814D7BF00304EDE /* MBProgressHUD.m in Sources */,
+				FE8F92471814D7BF00304EDE /* ElxStrings.m in Sources */,
+				FE8F92541814D7C800304EDE /* ElxWeb337.m in Sources */,
+				FE8F922F1814D7A900304EDE /* ElxError.m in Sources */,
+				FE8F924D1814D7BF00304EDE /* SZJsonParser.m in Sources */,
+				FE8F922B1814D6EC00304EDE /* ElxUser.m in Sources */,
+				FE8F92421814D7BF00304EDE /* ElxButton.m in Sources */,
+				FE8F92501814D7BF00304EDE /* ElxFBLogin.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8F91FF1814D45200304EDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE8F91FD1814D2EA00304EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8F91CB1814CE3D00304EDE /* web337 */;
+			targetProxy = FE8F91FC1814D2EA00304EDE /* PBXContainerItemProxy */;
+		};
+		FE8F92261814D58200304EDE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8F92021814D45200304EDE /* web337Resources */;
+			targetProxy = FE8F92251814D58200304EDE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE8F92091814D45200304EDE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8F920A1814D45200304EDE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FE8F91ED1814CE3D00304EDE /* Debug */ = {
@@ -223,24 +531,97 @@
 		FE8F91F01814CE3D00304EDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/web337.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/elex/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "web337/web337-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
 		FE8F91F11814CE3D00304EDE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
 				DSTROOT = /tmp/web337.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/elex/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "web337/web337-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SKIP_INSTALL = YES;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		FE8F91FA1814D2DA00304EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE8F91FB1814D2DA00304EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FE8F920E1814D45200304EDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "web337Resources/web337Resources-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "web337Resources/web337Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = web337;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FE8F920F1814D45200304EDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "web337Resources/web337Resources-Prefix.pch";
+				INFOPLIST_FILE = "web337Resources/web337Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = web337;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -264,6 +645,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FE8F91F91814D2DA00304EDE /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F91FA1814D2DA00304EDE /* Debug */,
+				FE8F91FB1814D2DA00304EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FE8F920D1814D45200304EDE /* Build configuration list for PBXNativeTarget "web337Resources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F920E1814D45200304EDE /* Debug */,
+				FE8F920F1814D45200304EDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
