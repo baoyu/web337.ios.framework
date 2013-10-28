@@ -52,7 +52,7 @@
 {
     @"en",
     @"Login",
-    @"Sign",
+    @"Sign Up",
     @"Submit",
     @"Forget",
     @"Login",
