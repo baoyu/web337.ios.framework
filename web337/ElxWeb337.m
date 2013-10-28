@@ -78,6 +78,8 @@ typedef void (^ElxHttpError)(ElxError *error);
 @property (retain, nonatomic) UIColor * bgColor;
 @property (retain, nonatomic) MBProgressHUD * HUD;
 
+@property (assign,nonatomic) BOOL withCloseButton;
+
 @end
 
 
@@ -103,7 +105,7 @@ float buttomHeight = 0;
 @synthesize textFieldValues = _textFieldValues;
 @synthesize HUD = _HUD;
 
-@synthesize FacebookSupport,GameCenterSupport;
+@synthesize FacebookSupport,GameCenterSupport,withCloseButton;
 
 
 typedef void (^ThirdPartyCompleteHandler)(NSDictionary *obj, NSError *error);
@@ -349,8 +351,14 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 //在view中显示login窗口
 -(void)loginInView:(UIView *)view callback:(ElxLoginHandler)handler{
+    [self loginInView:view withCloseButton:NO callback:handler];
+}
+
+//在view中显示登陆窗口,withClose表示窗口是否包含关闭按钮
+-(void)loginInView:(UIView *)view withCloseButton:(BOOL)withClose callback:(ElxLoginHandler)handler{
     self.type = ElxViewType_Login;
     self.loginHandler = handler;
+    self.withCloseButton = withClose;
     //如果已有人登陆，那么就返回这个信息 不再打开窗口
     if(self.user){
         return handler(self.user,nil);
@@ -365,18 +373,23 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 }
 
 //在当前窗口中显示register
--(void)register:(ElxLoginHandler)handler{
+-(void)openRegister:(ElxLoginHandler)handler{
     UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
-    [self registerInView:currentWindow callback:handler];
+    [self openRegisterInView:currentWindow callback:handler];
 }
 
 //在view中显示登录窗口
--(void)registerInView:(UIView *)view callback:(ElxLoginHandler)handler{
-    self.type = ElxViewType_Register;
-    self.loginHandler = handler;
-    [self showInView:view animated:YES];
+-(void)openRegisterInView:(UIView *)view callback:(ElxLoginHandler)handler{
+    [self openRegisterInView:view withCloseButton:NO callback:handler];
 }
 
+//在view中显示登录窗口,hasClose表示窗口是否包含关闭按钮
+-(void)openRegisterInView:(UIView *)view withCloseButton:(BOOL)withClose callback:(ElxLoginHandler)handler{
+    self.type = ElxViewType_Register;
+    self.loginHandler = handler;
+    self.withCloseButton = withClose;
+    [self showInView:view animated:YES];
+}
 
 //提供账号名，密码，email进行注册
 -(void)registerWithUsername:(NSString *)_username password:(NSString *)_password email:(NSString *) _email callback:(ElxLoginHandler)handler{
@@ -656,6 +669,10 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
                                                  name: UIApplicationDidChangeStatusBarOrientationNotification
                                                object: nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    
     [self orientationDidChange:nil];
     [aView addSubview:self];
     if (animated) {
@@ -760,7 +777,54 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     [self redrawTableView];
 }
 
+- (void)keyboardWillShow:(NSNotification*)notification
+{
+    if(!inPortrait && !iPad){
+        float offset = [self tableView:self.tableView heightForHeaderInSection:0] + self.tableView.frame.origin.y;
+        [UIView animateWithDuration:0.2
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             self.tableView.transform = CGAffineTransformMakeTranslation (0, -offset);
+                         }
+                         completion:nil];
+    }
 
+    
+    /*
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
+    
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    CGRect rect = self.view.frame;
+    rect.size.height -= keyboardSize.height;
+    
+    if (!CGRectContainsPoint(rect, self.textView.frame.origin)) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.textView.frame.origin.y - (keyboardSize.height - self.textView.frame.size.height));
+        [self.scrollView setContentOffset:scrollPoint animated:NO];
+    }
+    */
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    if(!inPortrait && !iPad){
+    [UIView animateWithDuration:0.3
+                          delay:0.0
+                        options:0
+                     animations:^{
+                             self.tableView.transform = CGAffineTransformMakeTranslation (0, 0);
+                     }
+                     completion:nil];
+    }
+    /*
+     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+     */
+}
 
 
 #pragma mark MBProgressHUDDelegate methods
@@ -859,6 +923,21 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     logoIV.image = logoImg;
     [customSectionView addSubview:[logoIV autorelease]];
     
+    if(self.withCloseButton){
+        UIImage *close = [UIImage imageNamed:@"web337.bundle/337_close.png"];
+        UIImageView *closeIV = [[UIImageView alloc]init];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeButtonClicked:)];
+        singleTap.numberOfTapsRequired = 1;
+        closeIV.userInteractionEnabled = YES;
+        [closeIV addGestureRecognizer:singleTap];
+        x = self.tableView.frame.size.width - COMMON_PADDING - close.size.width;
+        closeIV.frame = CGRectMake(x,y,close.size.width,close.size.height);
+        closeIV.image = close;
+        [customSectionView addSubview:[closeIV autorelease]];
+    }
+
+    
+    
     x = 0;
     y += h + y;
     w = self.tableView.frame.size.width;
@@ -882,12 +961,12 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         }
 
         if(inPortrait){
-            return 113 -add;
+            return 113 -add - SECOND_BTN_DECREASE;
         }else{
-            return 116 -add;
+            return 116 -add - SECOND_BTN_DECREASE;
         }
     }else{
-        return 78.0;
+        return 78.0 - SECOND_BTN_DECREASE;
     }
 }
 
@@ -905,8 +984,10 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     }
 
     UIView *view = nil;
+    float buttomFix = 0;
     if(self.type == ElxViewType_Register){
         view =  [self tableView:tableView viewForFooterInSectionForRegister:section];
+        buttomFix = 2;
     }else{
         view =  [self tableView:tableView viewForFooterInSectionForLogin:section];
     }
@@ -926,7 +1007,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         needsRedraw = NO;
         [self redrawTableView];
     }
-    
+    [view bringSubviewToFront:lastButton];
     return view;
 }
 
@@ -951,7 +1032,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     
     submitButton.frame = CGRectMake(space, nextRowTop, widthElement, height);
     nextRowTop += space + height;
-    backToLogin.frame = CGRectMake(0, nextRowTop, widthAll, height);
+    backToLogin.frame = CGRectMake(0, nextRowTop, widthAll, height - SECOND_BTN_DECREASE);
     
     
     //common setups
@@ -963,6 +1044,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
                   action:@selector(regButtonClicked:)
         forControlEvents:UIControlEventTouchUpInside
      ];
+    submitButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST];
     [customSectionView addSubview:submitButton];
     
     
@@ -971,9 +1053,9 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     //因为下面挂个圆角矩形，所以不做高亮变色了
     //[regButton setHighlightColor:[UIColor colorWithRed:176/255.0f green:189/255.0f blue:189/255.0f alpha:1.0f]];
     [backToLogin setHighlightColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
-    
     [backToLogin addTarget:self action:@selector(switchFromLoginAndRegister:) forControlEvents:UIControlEventTouchUpInside];
-
+    backToLogin.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST-SECOND_BTN_FONT_DECREASE];
+    
     UIImage *lock =[UIImage imageNamed:@"web337.bundle/337_lefta.png"];
     [backToLogin setImage:lock  forState:UIControlStateNormal];
     
@@ -1023,19 +1105,20 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         [customSectionView addSubview:[fbLogin autorelease]];
     }
     
-    regButton.frame = CGRectMake(0, nextRowTop, widthAll, height);
+    regButton.frame = CGRectMake(0, nextRowTop, widthAll, height - SECOND_BTN_DECREASE);
     //config loginButton
     [loginButton setBackgroundColor:[UIColor colorWithRed:84/255.0f green:189/255.0f blue:16/255.0f alpha:1.0f]];
     [loginButton setHighlightColor:[UIColor colorWithRed:59/255.0f green:169/255.0f blue:11/255.0f alpha:1.0f]];
     [loginButton setTitle:[ElxStrings get:Elx_STR_login]forState:UIControlStateNormal];
     [loginButton addTarget:self action:@selector(loginButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
+    loginButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST];
     
     [regButton setTitle:[ElxStrings get:Elx_STR_register] forState:UIControlStateNormal];
     [regButton setBackgroundColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
     //因为下面挂个圆角矩形，所以不做高亮变色了
     [regButton setHighlightColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
     [regButton addTarget:self action:@selector(switchFromLoginAndRegister:) forControlEvents:UIControlEventTouchUpInside];
+    regButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST-SECOND_BTN_FONT_DECREASE];
     
     UIImage *lock =[UIImage imageNamed:@"web337.bundle/337_righta.png"];
     [regButton setImage:lock  forState:UIControlStateNormal];
@@ -1045,7 +1128,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     CGFloat spacing = 5;
     regButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
     regButton.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
-
+    
     [customSectionView addSubview:loginButton];
     [customSectionView addSubview:regButton];
 
