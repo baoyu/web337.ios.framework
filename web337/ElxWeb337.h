@@ -12,18 +12,6 @@
 #import "ElxError.h"
 
 
-/*
- * To use facebook ,just uncomment the follow line
- * Install facebook ios framework, and setup all necessaries
- *
- *
- */
-#define SDK_FACEBOOK_ENABLE 1
-
-//To use GameCenter ,just uncomment the follow line, not support yet!
-//#define SDK_GAMECENTER_ENABLE 1
-
-
 typedef void (^ElxLoginHandler)(ElxUser *user,ElxError *error);
 typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
@@ -48,18 +36,21 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 //在当前窗口中显示Login
 -(void)login:(ElxLoginHandler)handler;
-
 //在view中显示登陆窗口
 -(void)loginInView:(UIView *)view callback:(ElxLoginHandler)handler;
+//在view中显示登陆窗口,hasClose表示窗口是否包含关闭按钮
+-(void)loginInView:(UIView *)view withCloseButton:(BOOL)withClose callback:(ElxLoginHandler)handler;
+
 
 //提供账号密码进行登录，成功会返回用户信息，失败返回错误
 -(void)loginWithUsername:(NSString *)u password:(NSString *)pass callback:(ElxLoginHandler)handler;
 
 //在当前窗口中显示register
--(void)register:(ElxLoginHandler)handler;
-
+-(void)openRegister:(ElxLoginHandler)handler;
 //在view中显示登录窗口
--(void)registerInView:(UIView *)view callback:(ElxLoginHandler)handler;
+-(void)openRegisterInView:(UIView *)view callback:(ElxLoginHandler)handler;
+//在view中显示登录窗口,hasClose表示窗口是否包含关闭按钮
+-(void)openRegisterInView:(UIView *)view withCloseButton:(BOOL)withClose callback:(ElxLoginHandler)handler;
 
 //提供账号，密码，邮件地址进行注册，成功会返回用户信息，失败返回错误
 -(void)registerWithUsername:(NSString *)_username password:(NSString *)_password email:(NSString *) _email callback:(ElxLoginHandler)handler;
