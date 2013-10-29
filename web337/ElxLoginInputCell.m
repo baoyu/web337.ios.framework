@@ -85,7 +85,7 @@ static NSMutableArray *container = nil;
     switch (tag) {
         case ElxInputCellType_Login_Username:
             textField.placeholder = [ElxStrings get:Elx_STR_p_username];
-            textField.keyboardType = UIKeyboardTypeDefault;
+            textField.keyboardType = UIKeyboardTypeAlphabet;
             textField.returnKeyType = UIReturnKeyNext;
             textField.clearButtonMode = UITextFieldViewModeWhileEditing;
             break;
@@ -128,7 +128,7 @@ static NSMutableArray *container = nil;
         case ElxInputCellType_Reg_Username:
             textField.placeholder = [ElxStrings get:Elx_STR_p_username];
             textField.returnKeyType = UIReturnKeyNext;
-            textField.keyboardType = UIKeyboardTypeDefault;
+            textField.keyboardType = UIKeyboardTypeAlphabet;
             textField.clearButtonMode = UITextFieldViewModeWhileEditing;
             break;
         case ElxInputCellType_Reg_Email:
@@ -182,14 +182,19 @@ static NSMutableArray *container = nil;
             }
             CGSize size = self.contentView.frame.size;
 
-
+            /*
             float widthFix = 1;
             float h = size.height - TEXTFIELD_SPACE/2;
             float w = (size.width - TEXTFIELD_SPACE *3)/2;
-            
             left.frame = CGRectMake(TEXTFIELD_SPACE, TEXTFIELD_SPACE/2, w-widthFix, h);
             right.frame = CGRectMake(TEXTFIELD_SPACE*2 + w -widthFix, TEXTFIELD_SPACE/2, w+widthFix, h);
-
+            */
+            
+            float h = size.height - TEXTFIELD_SPACE/2;
+            float w = (size.width - TEXTFIELD_SPACE *3)/2;
+            left.frame = CGRectMake(TEXTFIELD_SPACE, TEXTFIELD_SPACE/2, w, h);
+            right.frame = CGRectMake(TEXTFIELD_SPACE*2 + w, TEXTFIELD_SPACE/2, w, h);
+            
             [self.contentView addSubview:left];
             [self.contentView addSubview:right];
         }
@@ -215,13 +220,18 @@ static NSMutableArray *container = nil;
             
             CGSize size = self.contentView.frame.size;
             
+            /*
             float widthFix = 1;
             float h = size.height - TEXTFIELD_SPACE/2;
             float w = (size.width - TEXTFIELD_SPACE *3)/2;
-            
             left.frame = CGRectMake(TEXTFIELD_SPACE, TEXTFIELD_SPACE/2, w-widthFix, h);
             right.frame = CGRectMake(TEXTFIELD_SPACE*2 + w -widthFix, TEXTFIELD_SPACE/2, w+widthFix, h);
-
+            */
+            
+            float h = size.height - TEXTFIELD_SPACE/2;
+            float w = (size.width - TEXTFIELD_SPACE *3)/2;
+            left.frame = CGRectMake(TEXTFIELD_SPACE, TEXTFIELD_SPACE/2, w, h);
+            right.frame = CGRectMake(TEXTFIELD_SPACE*2 + w, TEXTFIELD_SPACE/2, w, h);
             
             [self.contentView addSubview:left];
             [self.contentView addSubview:right];
