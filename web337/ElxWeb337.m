@@ -79,6 +79,7 @@ typedef void (^ElxHttpError)(ElxError *error);
 @property (retain, nonatomic) MBProgressHUD * HUD;
 
 @property (assign,nonatomic) BOOL withCloseButton;
+@property (assign,nonatomic) BOOL elementUp;
 
 @end
 
@@ -105,7 +106,7 @@ float buttomHeight = 0;
 @synthesize textFieldValues = _textFieldValues;
 @synthesize HUD = _HUD;
 
-@synthesize FacebookSupport,GameCenterSupport,withCloseButton;
+@synthesize FacebookSupport,GameCenterSupport,withCloseButton,elementUp;
 
 
 typedef void (^ThirdPartyCompleteHandler)(NSDictionary *obj, NSError *error);
@@ -172,16 +173,34 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 -(void)facebookLogin{
     Class FBSession = NSClassFromString(@"FBSession");
     if(FBSession){
+        
+        //show hud
+        self.HUD = [MBProgressHUD showHUDAddedTo:self.tableView animated:YES];
+        self.HUD.delegate = self;
+        
         [FBSession openActiveSessionWithReadPermissions:[self getFacebookReadPermissions]
                                            allowLoginUI:YES
                                       completionHandler: ^(NSObject *session,
                                                            int *status,
                                                            NSError *error) {
+                                          if(error){
+                                              //尝试重复登陆
+                                              self.HUD.mode = MBProgressHUDModeText;
+                                              self.HUD.detailsLabelText= [error localizedDescription];
+                                              [self.HUD hide:YES afterDelay:3];
+                                              return;
+                                          }
                                           [self getFacebookUser:^(NSDictionary *obj, NSError *error){
                                               if(obj){
                                                   [self saveSession:obj];
                                                   self.loginHandler(self.user,nil);
+                                                  [self.HUD hide:YES];
                                                   [self fadeOut];
+                                              }else{
+                                                  //尝试重复登陆
+                                                  self.HUD.mode = MBProgressHUDModeText;
+                                                  self.HUD.detailsLabelText= [error localizedDescription];
+                                                  [self.HUD hide:YES afterDelay:3];
                                               }
                                           }];
                                       }];
@@ -233,6 +252,8 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 #pragma mark - initialization & cleaning up
 - (id)init{
+    NSLog(@"web337 sdk last modified date %lld",WEB337_SDK_LASTMODIFIED);
+    
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
     rect.origin.x = 0;
     rect.origin.y = 0;
@@ -345,8 +366,9 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 //显示登录窗口
 -(void)login:(ElxLoginHandler)handler{
-    UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
-    [self loginInView:currentWindow callback:handler];
+    UIView *top = [[UIApplication sharedApplication] keyWindow];
+    //UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
+    [self loginInView:top callback:handler];
 }
 
 //在view中显示login窗口
@@ -374,7 +396,8 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 //在当前窗口中显示register
 -(void)openRegister:(ElxLoginHandler)handler{
-    UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
+    UIView *currentWindow = [[UIApplication sharedApplication] keyWindow];
+    //UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
     [self openRegisterInView:currentWindow callback:handler];
 }
 
@@ -663,6 +686,41 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     }];
 }
 
+
+- (void)keyboardWillShow:(NSNotification*)notification
+{
+    if(!inPortrait && !iPad && !elementUp){
+        float offset = [self tableView:self.tableView heightForHeaderInSection:0] + self.tableView.frame.origin.y;
+        [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             self.tableView.transform = CGAffineTransformMakeTranslation (0, -offset);
+                         }
+                         completion:^(BOOL Finished){
+                             elementUp = YES;
+                         }];
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification
+{
+    if(!inPortrait && !iPad && elementUp){
+        [UIView animateWithDuration:0.15
+                              delay:0.0
+                            options:0
+                         animations:^{
+                             self.tableView.transform = CGAffineTransformMakeTranslation (0, 0);
+                         }
+                         completion:^(BOOL Finished){
+                             elementUp = NO;
+                         }];
+    }
+}
+
+
+
+
 - (void)showInView:(UIView *)aView animated:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(orientationDidChange:)
@@ -775,55 +833,6 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     //[UIView setAnimationDuration:1];
     self.tableView.frame = [self contentRectBy:self.frame];
     [self redrawTableView];
-}
-
-- (void)keyboardWillShow:(NSNotification*)notification
-{
-    if(!inPortrait && !iPad){
-        float offset = [self tableView:self.tableView heightForHeaderInSection:0] + self.tableView.frame.origin.y;
-        [UIView animateWithDuration:0.2
-                              delay:0.0
-                            options:0
-                         animations:^{
-                             self.tableView.transform = CGAffineTransformMakeTranslation (0, -offset);
-                         }
-                         completion:nil];
-    }
-
-    
-    /*
-    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
-    
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-    
-    CGRect rect = self.view.frame;
-    rect.size.height -= keyboardSize.height;
-    
-    if (!CGRectContainsPoint(rect, self.textView.frame.origin)) {
-        CGPoint scrollPoint = CGPointMake(0.0, self.textView.frame.origin.y - (keyboardSize.height - self.textView.frame.size.height));
-        [self.scrollView setContentOffset:scrollPoint animated:NO];
-    }
-    */
-}
-
-- (void)keyboardWillHide:(NSNotification *)notification
-{
-    if(!inPortrait && !iPad){
-    [UIView animateWithDuration:0.3
-                          delay:0.0
-                        options:0
-                     animations:^{
-                             self.tableView.transform = CGAffineTransformMakeTranslation (0, 0);
-                     }
-                     completion:nil];
-    }
-    /*
-     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
-     */
 }
 
 
@@ -1049,19 +1058,27 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     
     
     [backToLogin setTitle:[ElxStrings get:Elx_STR_back] forState:UIControlStateNormal];
-    [backToLogin setBackgroundColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
+    [backToLogin setBackgroundColor:[UIColor colorWithRed:223/255.0f green:223/255.0f blue:223/255.0f alpha:1.0f]];
     //因为下面挂个圆角矩形，所以不做高亮变色了
     //[regButton setHighlightColor:[UIColor colorWithRed:176/255.0f green:189/255.0f blue:189/255.0f alpha:1.0f]];
-    [backToLogin setHighlightColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
+    [backToLogin setHighlightColor:[UIColor colorWithRed:223/255.0f green:223/255.0f blue:223/255.0f alpha:1.0f]];
     [backToLogin addTarget:self action:@selector(switchFromLoginAndRegister:) forControlEvents:UIControlEventTouchUpInside];
     backToLogin.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST-SECOND_BTN_FONT_DECREASE];
+
+    
+    
+    [backToLogin setTitleColor:[UIColor colorWithRed:122/255.0f green:121/255.0f blue:121/255.0f alpha:1.0f] forState:UIControlStateNormal];
+    
+
     
     UIImage *lock =[UIImage imageNamed:@"web337.bundle/337_lefta.png"];
     [backToLogin setImage:lock  forState:UIControlStateNormal];
-    
+    [backToLogin putImageRight:NO];
+    /*
     CGFloat spacing = 5;
     backToLogin.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
     backToLogin.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
+    */
     
     [customSectionView addSubview:backToLogin];
     
@@ -1114,21 +1131,28 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     loginButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST];
     
     [regButton setTitle:[ElxStrings get:Elx_STR_register] forState:UIControlStateNormal];
-    [regButton setBackgroundColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
+    [regButton setBackgroundColor:[UIColor colorWithRed:223/255.0f green:223/255.0f blue:223/255.0f alpha:1.0f]];
     //因为下面挂个圆角矩形，所以不做高亮变色了
-    [regButton setHighlightColor:[UIColor colorWithRed:204/255.0f green:204/255.0f blue:204/255.0f alpha:1.0f]];
+    [regButton setHighlightColor:[UIColor colorWithRed:223/255.0f green:223/255.0f blue:223/255.0f alpha:1.0f]];
+    
+
+    
+    
     [regButton addTarget:self action:@selector(switchFromLoginAndRegister:) forControlEvents:UIControlEventTouchUpInside];
     regButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:CHAR_SIZE_CONST-SECOND_BTN_FONT_DECREASE];
+
+    [regButton setTitleColor:[UIColor colorWithRed:122/255.0f green:121/255.0f blue:121/255.0f alpha:1.0f] forState:UIControlStateNormal];
     
     UIImage *lock =[UIImage imageNamed:@"web337.bundle/337_righta.png"];
     [regButton setImage:lock  forState:UIControlStateNormal];
-    
+    [regButton putImageRight:YES];
+    /*
     regButton.titleEdgeInsets = UIEdgeInsetsMake(0., 0., 0., lock.size.width);
-    
     CGFloat spacing = 5;
     regButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spacing);
     regButton.titleEdgeInsets = UIEdgeInsetsMake(0, spacing, 0, 0);
-    
+    */
+     
     [customSectionView addSubview:loginButton];
     [customSectionView addSubview:regButton];
 
