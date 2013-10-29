@@ -34,7 +34,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  */
 -(NSString *)loginkey;
 
-//在当前窗口中显示Login
+//在当前窗口中显示Login，有可能效果不理想。建议使用 loginInView 系列方法
 -(void)login:(ElxLoginHandler)handler;
 //在view中显示登陆窗口
 -(void)loginInView:(UIView *)view callback:(ElxLoginHandler)handler;
@@ -45,7 +45,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 //提供账号密码进行登录，成功会返回用户信息，失败返回错误
 -(void)loginWithUsername:(NSString *)u password:(NSString *)pass callback:(ElxLoginHandler)handler;
 
-//在当前窗口中显示register
+//在当前窗口中显示register，有可能效果不理想。建议使用 openRegisterInView 系列方法
 -(void)openRegister:(ElxLoginHandler)handler;
 //在view中显示登录窗口
 -(void)openRegisterInView:(UIView *)view callback:(ElxLoginHandler)handler;
