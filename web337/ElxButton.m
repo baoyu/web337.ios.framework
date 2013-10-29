@@ -12,10 +12,15 @@
 
 @property (retain,nonatomic) UIColor *normal;
 @property (retain,nonatomic) UIColor *highlight;
+@property (assign,nonatomic) BOOL imgPosRight;
 
 @end
 
 @implementation ElxButton
+
+const int LB_IMG_PAD = 3;
+
+@synthesize imgPosRight;
 
 #pragma mark Settings
 
@@ -68,6 +73,42 @@
         [self setupButton];
     }
     return self;
+}
+
+- (void)putImageRight:(BOOL)right{
+    imgPosRight = right;
+}
+
+- (void)layoutSubviews
+{
+    // Allow default layout, then adjust image and label positions
+    [super layoutSubviews];
+    
+    if(self.imageView.image != Nil){
+        UIImageView *imageView = [self imageView];
+        UILabel *label = [self titleLabel];
+
+        CGRect imageFrame = imageView.frame;
+        CGRect labelFrame = label.frame;
+        CGRect btnFrame = self.frame;
+        
+        
+        if(imgPosRight){
+            float w = btnFrame.size.width,
+            lw = labelFrame.size.width,
+            iw = imageFrame.size.width;
+            labelFrame.origin.x = (w - (lw + iw + LB_IMG_PAD))/2;
+            imageFrame.origin.x = labelFrame.origin.x + lw + LB_IMG_PAD;
+        }else{
+            float w = btnFrame.size.width,
+            lw = labelFrame.size.width,
+            iw = imageFrame.size.width;
+            imageFrame.origin.x = (w - (lw + iw + LB_IMG_PAD))/2;
+            labelFrame.origin.x = imageFrame.origin.x + iw + LB_IMG_PAD;
+        }
+        imageView.frame = imageFrame;
+        label.frame = labelFrame;
+    }
 }
 
 -(void)dealloc{

@@ -13,4 +13,6 @@
 
 - (void)setHighlightColor:(UIColor *)color;
 
+- (void)putImageRight:(BOOL)right;
+
 @end
