@@ -23,6 +23,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		FE8DB453182255E0002098E3 /* ElxBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8DB451182255E0002098E3 /* ElxBaseView.h */; };
+		FE8DB454182255E0002098E3 /* ElxBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB452182255E0002098E3 /* ElxBaseView.m */; };
 		FE8F91D01814CE3D00304EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CF1814CE3D00304EDE /* Foundation.framework */; };
 		FE8F91D51814CE3D00304EDE /* web337.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; };
 		FE8F91F61814CFF000304EDE /* web337.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,8 +46,6 @@
 		FE8F922F1814D7A900304EDE /* ElxError.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F922D1814D7A900304EDE /* ElxError.m */; };
 		FE8F92411814D7BF00304EDE /* ElxButton.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92311814D7BF00304EDE /* ElxButton.h */; };
 		FE8F92421814D7BF00304EDE /* ElxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92321814D7BF00304EDE /* ElxButton.m */; };
-		FE8F92431814D7BF00304EDE /* ElxLoginInputCell.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */; };
-		FE8F92441814D7BF00304EDE /* ElxLoginInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */; };
 		FE8F92461814D7BF00304EDE /* ElxStrings.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92361814D7BF00304EDE /* ElxStrings.h */; };
 		FE8F92471814D7BF00304EDE /* ElxStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92371814D7BF00304EDE /* ElxStrings.m */; };
 		FE8F92481814D7BF00304EDE /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92381814D7BF00304EDE /* MBProgressHUD.h */; };
@@ -54,11 +54,16 @@
 		FE8F924B1814D7BF00304EDE /* OHURLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F923B1814D7BF00304EDE /* OHURLLoader.m */; };
 		FE8F924C1814D7BF00304EDE /* SZJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923C1814D7BF00304EDE /* SZJsonParser.h */; };
 		FE8F924D1814D7BF00304EDE /* SZJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F923D1814D7BF00304EDE /* SZJsonParser.m */; };
-		FE8F924E1814D7BF00304EDE /* ElxConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923E1814D7BF00304EDE /* ElxConfig.h */; };
 		FE8F924F1814D7BF00304EDE /* ElxFBLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */; };
 		FE8F92501814D7BF00304EDE /* ElxFBLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92401814D7BF00304EDE /* ElxFBLogin.m */; };
 		FE8F92531814D7C800304EDE /* ElxWeb337.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F92511814D7C800304EDE /* ElxWeb337.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8F92541814D7C800304EDE /* ElxWeb337.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8F92521814D7C800304EDE /* ElxWeb337.m */; };
+		FE954DD21820AD1600963142 /* ElxLoginView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE954DD01820AD1600963142 /* ElxLoginView.h */; };
+		FE954DD31820AD1600963142 /* ElxLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE954DD11820AD1600963142 /* ElxLoginView.m */; };
+		FE954DD61820AD2400963142 /* ElxRegisterView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE954DD41820AD2400963142 /* ElxRegisterView.h */; };
+		FE954DD71820AD2400963142 /* ElxRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE954DD51820AD2400963142 /* ElxRegisterView.m */; };
+		FE954DE21820E82500963142 /* ElxConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FE954DE01820E82500963142 /* ElxConfig.h */; };
+		FE954DE31820E82500963142 /* ElxConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FE954DE11820E82500963142 /* ElxConfig.m */; };
 		FE9FC079181E352F00D7A60A /* 337_close.png in Resources */ = {isa = PBXBuildFile; fileRef = FE9FC077181E352F00D7A60A /* 337_close.png */; };
 		FE9FC07A181E352F00D7A60A /* 337_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE9FC078181E352F00D7A60A /* 337_close@2x.png */; };
 /* End PBXBuildFile section */
@@ -94,6 +99,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE8DB451182255E0002098E3 /* ElxBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxBaseView.h; sourceTree = "<group>"; };
+		FE8DB452182255E0002098E3 /* ElxBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxBaseView.m; sourceTree = "<group>"; };
 		FE8F91CC1814CE3D00304EDE /* libweb337.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libweb337.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8F91CF1814CE3D00304EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE8F91D31814CE3D00304EDE /* web337-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "web337-Prefix.pch"; sourceTree = "<group>"; };
@@ -120,8 +127,6 @@
 		FE8F922D1814D7A900304EDE /* ElxError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxError.m; sourceTree = "<group>"; };
 		FE8F92311814D7BF00304EDE /* ElxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxButton.h; sourceTree = "<group>"; };
 		FE8F92321814D7BF00304EDE /* ElxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxButton.m; sourceTree = "<group>"; };
-		FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxLoginInputCell.h; sourceTree = "<group>"; };
-		FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxLoginInputCell.m; sourceTree = "<group>"; };
 		FE8F92361814D7BF00304EDE /* ElxStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxStrings.h; sourceTree = "<group>"; };
 		FE8F92371814D7BF00304EDE /* ElxStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxStrings.m; sourceTree = "<group>"; };
 		FE8F92381814D7BF00304EDE /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -130,11 +135,16 @@
 		FE8F923B1814D7BF00304EDE /* OHURLLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHURLLoader.m; sourceTree = "<group>"; };
 		FE8F923C1814D7BF00304EDE /* SZJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZJsonParser.h; sourceTree = "<group>"; };
 		FE8F923D1814D7BF00304EDE /* SZJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZJsonParser.m; sourceTree = "<group>"; };
-		FE8F923E1814D7BF00304EDE /* ElxConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxConfig.h; sourceTree = "<group>"; };
 		FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxFBLogin.h; sourceTree = "<group>"; };
 		FE8F92401814D7BF00304EDE /* ElxFBLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxFBLogin.m; sourceTree = "<group>"; };
 		FE8F92511814D7C800304EDE /* ElxWeb337.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxWeb337.h; sourceTree = "<group>"; };
 		FE8F92521814D7C800304EDE /* ElxWeb337.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxWeb337.m; sourceTree = "<group>"; };
+		FE954DD01820AD1600963142 /* ElxLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxLoginView.h; sourceTree = "<group>"; };
+		FE954DD11820AD1600963142 /* ElxLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxLoginView.m; sourceTree = "<group>"; };
+		FE954DD41820AD2400963142 /* ElxRegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxRegisterView.h; sourceTree = "<group>"; };
+		FE954DD51820AD2400963142 /* ElxRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxRegisterView.m; sourceTree = "<group>"; };
+		FE954DE01820E82500963142 /* ElxConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxConfig.h; sourceTree = "<group>"; };
+		FE954DE11820E82500963142 /* ElxConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxConfig.m; sourceTree = "<group>"; };
 		FE9FC077181E352F00D7A60A /* 337_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_close.png; sourceTree = "<group>"; };
 		FE9FC078181E352F00D7A60A /* 337_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_close@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -254,10 +264,10 @@
 		FE8F92301814D7B200304EDE /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				FE8DB451182255E0002098E3 /* ElxBaseView.h */,
+				FE8DB452182255E0002098E3 /* ElxBaseView.m */,
 				FE8F92311814D7BF00304EDE /* ElxButton.h */,
 				FE8F92321814D7BF00304EDE /* ElxButton.m */,
-				FE8F92331814D7BF00304EDE /* ElxLoginInputCell.h */,
-				FE8F92341814D7BF00304EDE /* ElxLoginInputCell.m */,
 				FE8F92361814D7BF00304EDE /* ElxStrings.h */,
 				FE8F92371814D7BF00304EDE /* ElxStrings.m */,
 				FE8F92381814D7BF00304EDE /* MBProgressHUD.h */,
@@ -266,9 +276,14 @@
 				FE8F923B1814D7BF00304EDE /* OHURLLoader.m */,
 				FE8F923C1814D7BF00304EDE /* SZJsonParser.h */,
 				FE8F923D1814D7BF00304EDE /* SZJsonParser.m */,
-				FE8F923E1814D7BF00304EDE /* ElxConfig.h */,
 				FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */,
 				FE8F92401814D7BF00304EDE /* ElxFBLogin.m */,
+				FE954DD01820AD1600963142 /* ElxLoginView.h */,
+				FE954DD11820AD1600963142 /* ElxLoginView.m */,
+				FE954DD41820AD2400963142 /* ElxRegisterView.h */,
+				FE954DD51820AD2400963142 /* ElxRegisterView.m */,
+				FE954DE01820E82500963142 /* ElxConfig.h */,
+				FE954DE11820E82500963142 /* ElxConfig.m */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -282,16 +297,18 @@
 			files = (
 				FE8F91F61814CFF000304EDE /* web337.h in Headers */,
 				FE8F922E1814D7A900304EDE /* ElxError.h in Headers */,
+				FE954DE21820E82500963142 /* ElxConfig.h in Headers */,
 				FE8F92531814D7C800304EDE /* ElxWeb337.h in Headers */,
 				FE8F922A1814D6EC00304EDE /* ElxUser.h in Headers */,
-				FE8F924E1814D7BF00304EDE /* ElxConfig.h in Headers */,
+				FE954DD21820AD1600963142 /* ElxLoginView.h in Headers */,
 				FE8F92461814D7BF00304EDE /* ElxStrings.h in Headers */,
 				FE8F924C1814D7BF00304EDE /* SZJsonParser.h in Headers */,
+				FE8DB453182255E0002098E3 /* ElxBaseView.h in Headers */,
 				FE8F924F1814D7BF00304EDE /* ElxFBLogin.h in Headers */,
 				FE8F92481814D7BF00304EDE /* MBProgressHUD.h in Headers */,
+				FE954DD61820AD2400963142 /* ElxRegisterView.h in Headers */,
 				FE8F924A1814D7BF00304EDE /* OHURLLoader.h in Headers */,
 				FE8F92411814D7BF00304EDE /* ElxButton.h in Headers */,
-				FE8F92431814D7BF00304EDE /* ElxLoginInputCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,9 +436,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE8F92441814D7BF00304EDE /* ElxLoginInputCell.m in Sources */,
+				FE954DD71820AD2400963142 /* ElxRegisterView.m in Sources */,
 				FE8F924B1814D7BF00304EDE /* OHURLLoader.m in Sources */,
 				FE8F92491814D7BF00304EDE /* MBProgressHUD.m in Sources */,
+				FE954DE31820E82500963142 /* ElxConfig.m in Sources */,
+				FE8DB454182255E0002098E3 /* ElxBaseView.m in Sources */,
+				FE954DD31820AD1600963142 /* ElxLoginView.m in Sources */,
 				FE8F92471814D7BF00304EDE /* ElxStrings.m in Sources */,
 				FE8F92541814D7C800304EDE /* ElxWeb337.m in Sources */,
 				FE8F922F1814D7A900304EDE /* ElxError.m in Sources */,
