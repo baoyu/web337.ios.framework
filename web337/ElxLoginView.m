@@ -197,7 +197,7 @@ static NSString* const FORGETPASSWORD_URL = @"http://account.337.com/%@/pass/for
     
     
     //facebook 登录按钮
-    if(self.FacebookSupport || YES){
+    if(self.FacebookSupport){
         //facebook 登录按钮lazy初始化
         if(self.fbLogin == nil){
             ElxFBLogin *fbLogin = [[ElxFBLogin alloc]init];
@@ -210,8 +210,9 @@ static NSString* const FORGETPASSWORD_URL = @"http://account.337.com/%@/pass/for
         top += TEXTFIELD_SPACE;
         self.fbLogin.frame = CGRectMake(btn_space, top, btn_width , FACEBOOK_LOGIN_HEIGHT);
         top += FACEBOOK_LOGIN_HEIGHT;
+    }else{
+        self.fbLogin.frame = CGRectMake(0, 0, 0 , 0);
     }
-    
     
     top += TEXTFIELD_SPACE;
     self.regButton.frame = CGRectMake(0, top, width, btn_height - SECOND_BTN_DECREASE);
