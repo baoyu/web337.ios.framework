@@ -92,17 +92,14 @@ const int LB_IMG_PAD = 3;
         CGRect labelFrame = label.frame;
         CGRect btnFrame = self.frame;
         
+        float w = btnFrame.size.width,
+        lw = labelFrame.size.width,
+        iw = imageFrame.size.width;
         
         if(imgPosRight){
-            float w = btnFrame.size.width,
-            lw = labelFrame.size.width,
-            iw = imageFrame.size.width;
             labelFrame.origin.x = (w - (lw + iw + LB_IMG_PAD))/2;
             imageFrame.origin.x = labelFrame.origin.x + lw + LB_IMG_PAD;
         }else{
-            float w = btnFrame.size.width,
-            lw = labelFrame.size.width,
-            iw = imageFrame.size.width;
             imageFrame.origin.x = (w - (lw + iw + LB_IMG_PAD))/2;
             labelFrame.origin.x = imageFrame.origin.x + iw + LB_IMG_PAD;
         }
