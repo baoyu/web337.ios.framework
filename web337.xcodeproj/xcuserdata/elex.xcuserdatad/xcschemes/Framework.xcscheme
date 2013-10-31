@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE8F91CB1814CE3D00304EDE"
-               BuildableName = "libweb337.a"
-               BlueprintName = "web337"
+               BlueprintIdentifier = "FE8F91F81814D2DA00304EDE"
+               BuildableName = "Framework"
+               BlueprintName = "Framework"
                ReferencedContainer = "container:web337.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,16 +28,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE8F91DB1814CE3D00304EDE"
-               BuildableName = "web337Tests.xctest"
-               BlueprintName = "web337Tests"
-               ReferencedContainer = "container:web337.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
