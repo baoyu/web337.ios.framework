@@ -1,10 +1,11 @@
 //
 //  ElxConfig.h
-//  ElxWeb337
+//  web337
 //
-//  Created by elex on 13-10-15.
+//  Created by elex on 13-10-30.
 //  Copyright (c) 2013年 337. All rights reserved.
 //
+
 
 #ifndef ElxWeb337_ElxConfig_h
 #define ElxWeb337_ElxConfig_h
@@ -60,3 +61,38 @@
 
 
 #endif
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface ElxConfig : NSObject
+
+//背景颜色
++(UIColor *) colorBackground;
+//遮罩颜色
++(UIColor *) colorMask;
+
+
+//主按钮高亮颜色
++(UIColor *) colorBtnPrimaryHighlight;
+//主按钮背景颜色
++(UIColor *) colorBtnPrimary;
+//次按钮高亮
++(UIColor *) colorBtnDefaultHighlight;
+//次按钮背景颜色
++(UIColor *) colorBtnDefault;
+//次按钮文字颜色
++(UIColor *) colorTitle;
+//忘记密码的颜色
++(UIColor *) colorForgetPass;
+//忘记密码的字体
++(UIFont *) fontForgetPass;
+//主按钮字体
++(UIFont *) fontBtnPrimary;
+//次按钮字体
++(UIFont *) fontBtnDefault;
+
+//输入框字体
++(UIFont *) fontTextfield;
+
+@end
