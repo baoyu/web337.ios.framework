@@ -87,6 +87,10 @@
         singleTap.numberOfTapsRequired = 1;
         
         UIImageView *close = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337_x.png"]];
+        
+        //close.contentMode = UIViewContentModeScaleAspectFit;
+        close.contentMode = UIViewContentModeCenter;
+        
         close.userInteractionEnabled = YES;
         [close addGestureRecognizer:[singleTap autorelease]];
         self.close = [close autorelease];
@@ -124,8 +128,13 @@
     self.logo.frame = CGRectMake(x,y,w,h);
     
     if(self.close){
-        x = self.frame.size.width - COMMON_PADDING - self.close.frame.size.width;
-        self.close.frame = CGRectMake(x,y,self.close.frame.size.width,self.close.frame.size.height);
+
+        //x = self.frame.size.width - COMMON_PADDING - self.close.frame.size.width;
+        //self.close.frame = CGRectMake(x,y,self.close.image.size.width+50,self.close.image.size.height+50);
+        
+        //close 按钮是一个周围有空白的按钮，为了增大可触控区域，可以通过改变背景色看到
+        x = self.frame.size.width - self.close.image.size.width -  2* COMMON_PADDING;
+        self.close.frame = CGRectMake(x,y - COMMON_PADDING,self.close.image.size.width+2* COMMON_PADDING,self.close.image.size.height+2* COMMON_PADDING);
     }
     x = 0;
     y += h + y;
