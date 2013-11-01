@@ -25,6 +25,8 @@
 /* Begin PBXBuildFile section */
 		FE8DB453182255E0002098E3 /* ElxBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8DB451182255E0002098E3 /* ElxBaseView.h */; };
 		FE8DB454182255E0002098E3 /* ElxBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB452182255E0002098E3 /* ElxBaseView.m */; };
+		FE8E32EB18234AFE001BD1BD /* 337_x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8E32E918234AFE001BD1BD /* 337_x.png */; };
+		FE8E32EC18234AFE001BD1BD /* 337_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8E32EA18234AFE001BD1BD /* 337_x@2x.png */; };
 		FE8F91D01814CE3D00304EDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8F91CF1814CE3D00304EDE /* Foundation.framework */; };
 		FE8F91D51814CE3D00304EDE /* web337.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; };
 		FE8F91F61814CFF000304EDE /* web337.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8F91D41814CE3D00304EDE /* web337.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,8 +66,6 @@
 		FE954DD71820AD2400963142 /* ElxRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE954DD51820AD2400963142 /* ElxRegisterView.m */; };
 		FE954DE21820E82500963142 /* ElxConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = FE954DE01820E82500963142 /* ElxConfig.h */; };
 		FE954DE31820E82500963142 /* ElxConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FE954DE11820E82500963142 /* ElxConfig.m */; };
-		FE9FC079181E352F00D7A60A /* 337_close.png in Resources */ = {isa = PBXBuildFile; fileRef = FE9FC077181E352F00D7A60A /* 337_close.png */; };
-		FE9FC07A181E352F00D7A60A /* 337_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE9FC078181E352F00D7A60A /* 337_close@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +101,8 @@
 /* Begin PBXFileReference section */
 		FE8DB451182255E0002098E3 /* ElxBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxBaseView.h; sourceTree = "<group>"; };
 		FE8DB452182255E0002098E3 /* ElxBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxBaseView.m; sourceTree = "<group>"; };
+		FE8E32E918234AFE001BD1BD /* 337_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_x.png; sourceTree = "<group>"; };
+		FE8E32EA18234AFE001BD1BD /* 337_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_x@2x.png"; sourceTree = "<group>"; };
 		FE8F91CC1814CE3D00304EDE /* libweb337.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libweb337.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8F91CF1814CE3D00304EDE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FE8F91D31814CE3D00304EDE /* web337-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "web337-Prefix.pch"; sourceTree = "<group>"; };
@@ -145,8 +147,6 @@
 		FE954DD51820AD2400963142 /* ElxRegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxRegisterView.m; sourceTree = "<group>"; };
 		FE954DE01820E82500963142 /* ElxConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxConfig.h; sourceTree = "<group>"; };
 		FE954DE11820E82500963142 /* ElxConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxConfig.m; sourceTree = "<group>"; };
-		FE9FC077181E352F00D7A60A /* 337_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_close.png; sourceTree = "<group>"; };
-		FE9FC078181E352F00D7A60A /* 337_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337_close@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,8 +244,8 @@
 		FE8F92101814D56D00304EDE /* images */ = {
 			isa = PBXGroup;
 			children = (
-				FE9FC077181E352F00D7A60A /* 337_close.png */,
-				FE9FC078181E352F00D7A60A /* 337_close@2x.png */,
+				FE8E32E918234AFE001BD1BD /* 337_x.png */,
+				FE8E32EA18234AFE001BD1BD /* 337_x@2x.png */,
 				FE8F92111814D56D00304EDE /* 337_lefta.png */,
 				FE8F92121814D56D00304EDE /* 337_lefta@2x.png */,
 				FE8F92131814D56D00304EDE /* 337_lock.png */,
@@ -264,8 +264,6 @@
 		FE8F92301814D7B200304EDE /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				FE8DB451182255E0002098E3 /* ElxBaseView.h */,
-				FE8DB452182255E0002098E3 /* ElxBaseView.m */,
 				FE8F92311814D7BF00304EDE /* ElxButton.h */,
 				FE8F92321814D7BF00304EDE /* ElxButton.m */,
 				FE8F92361814D7BF00304EDE /* ElxStrings.h */,
@@ -278,6 +276,8 @@
 				FE8F923D1814D7BF00304EDE /* SZJsonParser.m */,
 				FE8F923F1814D7BF00304EDE /* ElxFBLogin.h */,
 				FE8F92401814D7BF00304EDE /* ElxFBLogin.m */,
+				FE8DB451182255E0002098E3 /* ElxBaseView.h */,
+				FE8DB452182255E0002098E3 /* ElxBaseView.m */,
 				FE954DD01820AD1600963142 /* ElxLoginView.h */,
 				FE954DD11820AD1600963142 /* ElxLoginView.m */,
 				FE954DD41820AD2400963142 /* ElxRegisterView.h */,
@@ -384,16 +384,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE9FC07A181E352F00D7A60A /* 337_close@2x.png in Resources */,
 				FE8F92201814D56D00304EDE /* 337_righta@2x.png in Resources */,
 				FE8F921F1814D56D00304EDE /* 337_righta.png in Resources */,
 				FE8F921D1814D56D00304EDE /* 337_lock.png in Resources */,
 				FE8F92221814D56D00304EDE /* 337logo@2x.png in Resources */,
 				FE8F92231814D56D00304EDE /* FBLoginViewButtonE.png in Resources */,
+				FE8E32EC18234AFE001BD1BD /* 337_x@2x.png in Resources */,
 				FE8F921B1814D56D00304EDE /* 337_lefta.png in Resources */,
-				FE9FC079181E352F00D7A60A /* 337_close.png in Resources */,
 				FE8F92211814D56D00304EDE /* 337logo.png in Resources */,
 				FE8F92241814D56D00304EDE /* FBLoginViewButtonE@2x.png in Resources */,
+				FE8E32EB18234AFE001BD1BD /* 337_x.png in Resources */,
 				FE8F921C1814D56D00304EDE /* 337_lefta@2x.png in Resources */,
 				FE8F920B1814D45200304EDE /* InfoPlist.strings in Resources */,
 				FE8F921E1814D56D00304EDE /* 337_lock@2x.png in Resources */,
