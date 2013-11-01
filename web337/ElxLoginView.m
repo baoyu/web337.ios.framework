@@ -159,28 +159,31 @@ static NSString* const FORGETPASSWORD_URL = @"http://account.337.com/%@/pass/for
     
     float
     tf_space = TEXTFIELD_SPACE,
-    tf_width = self.frame.size.width,
-    tf_height = INCELL_TEXTFIELD_HEIGHT;
+    tf_width = self.frame.size.width - tf_space*2,
+    tf_height = 100;
+    tf_height = INCELL_TEXTFIELD_HEIGHT - tf_space;
     
-    top += TEXTFIELD_SPACE/2;
-    
-    
+    top += tf_space;
+    NSLog(@"test!!!");
     if(inPortrait){
+        
         //first row
-        CGRect rowFrame = CGRectMake(0, top, tf_width, tf_height);
-        self.username.frame = CGRectInset(rowFrame, tf_space, tf_space/2);
+        top += tf_space;
+        self.username.frame = CGRectMake(tf_space, top, tf_width, tf_height);
         top+= tf_height;
+
         //second row
-        rowFrame.origin.y += tf_height;
-        self.password.frame = CGRectInset(rowFrame, tf_space, tf_space/2);
+        top += tf_space;
+        self.password.frame = CGRectMake(tf_space, top, tf_width, tf_height);
         top+= tf_height;
+        
     }else{
-        //first row, first colum
-        CGRect rowFrame = CGRectMake(0, top, tf_width/2 + tf_space/2, tf_height);
-        self.username.frame = CGRectInset(rowFrame, tf_space, tf_space/2);
-        //first row, second colum
-        rowFrame.origin.x += tf_width/2 - tf_space/2;
-        self.password.frame = CGRectInset(rowFrame, tf_space, tf_space/2);
+        
+        tf_width = (self.frame.size.width - tf_space*3)/2;
+        
+        self.username.frame = CGRectMake(tf_space, top, tf_width, tf_height);
+        self.password.frame = CGRectMake(tf_space + tf_width + tf_space, top, tf_width, tf_height);
+        
         top+= tf_height;
     }
 
@@ -218,14 +221,6 @@ static NSString* const FORGETPASSWORD_URL = @"http://account.337.com/%@/pass/for
     self.regButton.frame = CGRectMake(0, top, width, btn_height - SECOND_BTN_DECREASE);
     
     top += self.regButton.frame.size.height;
-    
-    if(inPortrait){
-        
-    }else{
-        
-    }
-    
-
     
     [self makeRoundCornerFor:self.regButton];
     
