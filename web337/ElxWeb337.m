@@ -31,8 +31,11 @@
 
 
 //weak link to GameCenter
-#ifdef SDK_GAMECENTER_ENABLE
+
 #import <GameKit/GameKit.h>
+
+#ifdef SDK_GAMECENTER_ENABLE
+
 #endif
 
 
@@ -107,7 +110,7 @@ BOOL localUserSetted = NO;
 
 #pragma mark - 第三方登录 Support
 - (void)setFacebookSupport:(BOOL)s {
-    NSLog(@"set Facebook Support! %d",s);
+    [self log:[NSString stringWithFormat:@"set Facebook Support to %d",s]];
     _FacebookSupport = s;
     if(self.loginView){
         self.loginView.FacebookSupport = self.FacebookSupport;
@@ -115,6 +118,7 @@ BOOL localUserSetted = NO;
 }
 
 - (void)setGameCenterSupport:(BOOL)s {
+    [self log:[NSString stringWithFormat:@"set GameCenter Support  to %d",s]];
     _GameCenterSupport = s;
     if(self.loginView){
         self.loginView.GameCenterSupport = self.GameCenterSupport;
@@ -264,8 +268,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 #pragma mark - initialization & cleaning up
 - (id)init{
-    NSLog(@"web337 sdk last modified date %lld",(long long)WEB337_SDK_LASTMODIFIED);
-    
+    [self log:[NSString stringWithFormat:@"web337 sdk last modified date %lld",(long long)WEB337_SDK_LASTMODIFIED]];
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
     rect.origin.x = 0;
     rect.origin.y = 0;
@@ -277,7 +280,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     
     //外部库加载策略
     
-
+    
     if (self = [super initWithFrame:rect]) {
         
         //灰色遮罩
@@ -320,6 +323,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         self.GameCenterSupport = NO;
     }
     
+    self.Debug = NO;
     
     return self;
 }
@@ -614,7 +618,11 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 #pragma mark - Private Methods
 
 
-
+-(void)log:(NSString *)str{
+    if(self.debug){
+        NSLog(@"%@",str);
+    }
+}
 
 - (void)showInView:(UIView *)aView animated:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver: self
@@ -643,9 +651,20 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     self.currentView.frame = currentViewFrame;
     float height = [self.currentView resizeAndGetHeightInPortrait:inPortrait];
     currentViewFrame.size.height = height;
+    self.currentView.frame = currentViewFrame;
+    
+    /*
+    CGRect ncvf = self.currentView.frame;
+    ncvf.size.height = ncvf.size.height - 30;
+    self.currentView.frame = ncvf;
+    */
     //调整高度
+    
+    /*
     CGRect mainF = self.main.frame;
     mainF.size.height = height;
+    */
+    
     self.main.frame = currentViewFrame;
 }
 
@@ -880,13 +899,13 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     NSURLRequest* req = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
     OHURLLoader* loader = [OHURLLoader URLLoaderWithRequest:req];
     
-    NSLog(@"calling %@",url);
+    [self log:[NSString stringWithFormat:@"calling %@",url]];
     [loader startRequestWithCompletion:^(NSData* receivedData, NSInteger httpStatusCode) {
-        NSLog(@"%@",loader.receivedString);
-        NSLog(@"(statusCode:%ld)",(long)httpStatusCode);
+        [self log:[NSString stringWithFormat:@"%@",loader.receivedString]];
+        [self log:[NSString stringWithFormat:@"(statusCode:%ld)",(long)httpStatusCode]];
         _scb(loader.receivedString,httpStatusCode);
     } errorHandler:^(NSError *error) {
-        NSLog(@"Error  %@",error);
+        [self log:[NSString stringWithFormat:@"Error  %@",error]];
         _ecb([ElxError fromNSError:error]);
     }];
     

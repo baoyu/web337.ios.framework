@@ -17,6 +17,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 @interface ElxWeb337 : UIView
 
+@property (assign,nonatomic) BOOL debug;
 @property (assign,nonatomic,setter=setFacebookSupport:) BOOL FacebookSupport;
 @property (assign,nonatomic,setter=setGameCenterSupport:) BOOL GameCenterSupport;
 
