@@ -125,7 +125,7 @@
     tf_width = self.frame.size.width - tf_space*2,
     tf_height = INCELL_TEXTFIELD_HEIGHT - tf_space;
     
-    top += tf_space;
+    //top += tf_space;
     
     
     if(inPortrait){

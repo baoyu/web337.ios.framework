@@ -160,11 +160,10 @@ static NSString* const FORGETPASSWORD_URL = @"http://account.337.com/%@/pass/for
     float
     tf_space = TEXTFIELD_SPACE,
     tf_width = self.frame.size.width - tf_space*2,
-    tf_height = 100;
     tf_height = INCELL_TEXTFIELD_HEIGHT - tf_space;
     
-    top += tf_space;
-    NSLog(@"test!!!");
+    //top += tf_space;
+    
     if(inPortrait){
         
         //first row
