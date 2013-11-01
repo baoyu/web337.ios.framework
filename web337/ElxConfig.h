@@ -48,8 +48,9 @@
 #define PADDING_LEFT_CONST  (iPad ? 44.0f : 10.0f)
 #define CHAR_SIZE_CONST  (iPad ? 15 : 14)
 
-#define SECOND_BTN_FONT_DECREASE 2
-#define SECOND_BTN_DECREASE 10
+//次级按钮如果缩小 不是很漂亮
+#define SECOND_BTN_FONT_DECREASE 0//2
+#define SECOND_BTN_DECREASE 0//10
 
 #ifdef NSTextAlignmentCenter // iOS6 and later
 #   define kLabelAlignmentLeft      NSTextAlignmentLeft
