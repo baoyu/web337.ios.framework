@@ -141,7 +141,7 @@
 -(UITextField *)getUITextField:(int)tag{
     UITextField *textField = [[UITextField alloc] init];
     
-    textField.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    //textField.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     textField.autocorrectionType = UITextAutocorrectionTypeNo;
     textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
