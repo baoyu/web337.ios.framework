@@ -86,7 +86,7 @@
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeButtonClicked:)];
         singleTap.numberOfTapsRequired = 1;
         
-        UIImageView *close = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337_close.png"]];
+        UIImageView *close = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337_x.png"]];
         close.userInteractionEnabled = YES;
         [close addGestureRecognizer:[singleTap autorelease]];
         self.close = [close autorelease];
