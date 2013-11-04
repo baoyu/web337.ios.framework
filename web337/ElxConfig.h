@@ -10,8 +10,6 @@
 #ifndef ElxWeb337_ElxConfig_h
 #define ElxWeb337_ElxConfig_h
 
-#define WEB337_SDK_LASTMODIFIED 201310291034
-
 #define POPLISTVIEW_SCREENINSET_HEIGHT 140.
 #define POPLISTVIEW_SCREENINSET 40.
 #define POPLISTVIEW_HEADER_INNER_HEIGHT 28.
@@ -68,32 +66,60 @@
 
 @interface ElxConfig : NSObject
 
-//背景颜色
+//colors
+
+/*!
+ 背景颜色
+ */
 +(UIColor *) colorBackground;
-//遮罩颜色
+/*!
+ 遮罩颜色
+ */
 +(UIColor *) colorMask;
-
-
-//主按钮高亮颜色
+/*!
+ 主按钮高亮颜色
+ */
 +(UIColor *) colorBtnPrimaryHighlight;
-//主按钮背景颜色
+/*!
+ 主按钮背景颜色
+ */
 +(UIColor *) colorBtnPrimary;
-//次按钮高亮
+/*!
+ 次按钮高亮
+ */
 +(UIColor *) colorBtnDefaultHighlight;
-//次按钮背景颜色
+/*!
+ 次按钮背景颜色
+ */
 +(UIColor *) colorBtnDefault;
-//次按钮文字颜色
+/*!
+ 次按钮文字颜色
+ */
 +(UIColor *) colorTitle;
-//忘记密码的颜色
+/*!
+ 忘记密码的颜色
+ */
 +(UIColor *) colorForgetPass;
-//忘记密码的字体
-+(UIFont *) fontForgetPass;
-//主按钮字体
-+(UIFont *) fontBtnPrimary;
-//次按钮字体
-+(UIFont *) fontBtnDefault;
 
-//输入框字体
+
+//font
+
+
+/*!
+ 忘记密码的字体
+ */
++(UIFont *) fontForgetPass;
+/*!
+ 主按钮字体
+ */
++(UIFont *) fontBtnPrimary;
+/*!
+ 次按钮字体
+ */
++(UIFont *) fontBtnDefault;
+/*!
+ 输入框字体
+ */
 +(UIFont *) fontTextfield;
 
 @end

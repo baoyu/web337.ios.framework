@@ -150,6 +150,7 @@
         top+= tf_height;
         
     }else{
+        top += tf_space;
         tf_width = (self.frame.size.width - tf_space*3)/2;
         
         self.username.frame = CGRectMake(tf_space, top, tf_width, tf_height);

@@ -10,19 +10,34 @@
 #import "ElxConfig.h"
 #import "ElxStrings.h"
 
-//self.tableView viewWithTag tag0 是tableview本身，所以需要占位
+/*!
+ @typedef ElxLoginInputCellType enum
+ 
+ @abstract
+ 用来给每个输入框编号
+ 
+ @discussion
+ 对页面中的输入框进行初始化，通过传入不同的编号以构造不同类型的界面元素。同时也提供了从UIView中得到输入框的序号。
+ */
+
 typedef enum {
-    ElxInputCellType_Table_View,
+    /*! 无意义的一个初始编号0，表示元素的SuperView */
+    ElxInputCellType_UI,
+    /*! 登陆界面->用户名 */
     ElxInputCellType_Login_Username,
+    /*! 登陆界面->密码 */
     ElxInputCellType_Login_Password,
+    /*! 注册界面->用户名 */
     ElxInputCellType_Reg_Username,
+    /*! 注册界面->电子邮件 */
     ElxInputCellType_Reg_Email,
+    /*! 注册界面->密码 */
     ElxInputCellType_Reg_Password,
+    /*! 注册界面->重复输入的密码 */
     ElxInputCellType_Reg_RePassword,
 } ElxLoginInputCellType;
 
 
-//self.tableView viewWithTag tag0 是tableview本身，所以需要占位
 @protocol ElxViewEventDelegate <NSObject>
 
 @optional
@@ -31,7 +46,6 @@ typedef enum {
 -(void)regButtonClicked:(UIButton*)button;
 -(void)loginButtonClicked:(UIButton*)button;
 -(void)closeButtonClicked:(UIButton*)button;
-
 -(void)facebookLogin:(UIButton*)button;
 
 @end

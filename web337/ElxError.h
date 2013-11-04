@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 
 static NSString* const CODE_UNKNOWN = @"10000";
-
+/*!
+ @class ElxError
+ 
+ @abstract
+ ElxError 错误信息
+ */
 @interface ElxError : NSObject
 
 @property (copy,nonatomic) NSString * code;

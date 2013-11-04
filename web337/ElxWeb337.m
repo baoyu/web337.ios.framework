@@ -8,8 +8,6 @@
 
 //keep
 #import "ElxWeb337.h"
-#import "ElxUser.h"
-#import "ElxButton.h"
 #import "ElxConfig.h"
 #import "ElxFBLogin.h"
 
@@ -268,7 +266,6 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 #pragma mark - initialization & cleaning up
 - (id)init{
-    NSLog(@"web337 SDK,last modified %lld",(long long)WEB337_SDK_LASTMODIFIED);
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
     rect.origin.x = 0;
     rect.origin.y = 0;
