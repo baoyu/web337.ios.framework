@@ -264,8 +264,11 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 #endif
 
 
+
 #pragma mark - initialization & cleaning up
 - (id)init{
+    NSLog(@"%@",WEB337_IOS_SDK_VERSION);
+    
     CGRect rect = [[UIScreen mainScreen] applicationFrame];
     rect.origin.x = 0;
     rect.origin.y = 0;
