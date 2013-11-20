@@ -82,19 +82,14 @@
 
     UIImageView *logo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337logo.png"]];
     
-    if(self.withCloseButton || YES){
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeButtonClicked:)];
-        singleTap.numberOfTapsRequired = 1;
-        
-        UIImageView *close = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337_x.png"]];
-        
-        //close.contentMode = UIViewContentModeScaleAspectFit;
-        close.contentMode = UIViewContentModeCenter;
-        
-        close.userInteractionEnabled = YES;
-        [close addGestureRecognizer:[singleTap autorelease]];
-        self.close = [close autorelease];
-    }
+
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeButtonClicked:)];
+    singleTap.numberOfTapsRequired = 1;
+    UIImageView *close = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"web337.bundle/337_x.png"]];
+    close.contentMode = UIViewContentModeCenter;
+    close.userInteractionEnabled = YES;
+    [close addGestureRecognizer:[singleTap autorelease]];
+    self.close = [close autorelease];
     
     UIView *line = [[UIView alloc]init];
     line.backgroundColor = [UIColor colorWithRed:224/255.0f green:224/255.0f blue:224/255.0f alpha:1.0f];
