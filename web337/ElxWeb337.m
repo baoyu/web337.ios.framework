@@ -54,6 +54,7 @@ static NSString* const ELEX_337_TYPE = @"type";
 //337用户的登录信息，如果账号没有连接337将不会有loginkey
 static NSString* const ELEX_337_LOGINKEY = @"loginkey";
 static NSString* const ELEX_337_SESSION = @"elex_337_session";
+static NSString* const ELEX_337_USERNAME = @"username";
 
 typedef enum {
     ElxViewType_Login,
@@ -307,6 +308,12 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         self.loginView.delegate = self;
         self.registerView.delegate = self;
         
+        //尝试自动取上次成功登陆的337用户 username
+        NSString *lastTimeUsername = [[NSUserDefaults standardUserDefaults] objectForKey:ELEX_337_USERNAME];
+        if(lastTimeUsername){
+            self.loginView.username.text = lastTimeUsername;
+        }
+
     }
     
     //facebook
@@ -724,6 +731,14 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         if(loginkey){
             [session setValue:loginkey forKey:ELEX_337_LOGINKEY];
         }
+        
+        //如果是337用户登陆，将337的username存储下来
+        if(type == ElxUser_337){
+            NSString *username = [obj objectForKey:ELEX_337_USERNAME];
+            [self log:[NSString stringWithFormat: @"saving username :%@",username]];
+            [userData setObject:username forKey:ELEX_337_USERNAME];
+        }
+        
         [userData setObject:session forKey:ELEX_337_SESSION];
         [userData synchronize];
         //set user
