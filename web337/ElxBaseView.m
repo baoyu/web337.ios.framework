@@ -127,14 +127,12 @@
     
     self.logo.frame = CGRectMake(x,y,w,h);
     
-    if(self.close){
-
-        //x = self.frame.size.width - COMMON_PADDING - self.close.frame.size.width;
-        //self.close.frame = CGRectMake(x,y,self.close.image.size.width+50,self.close.image.size.height+50);
-        
+    if(self.withCloseButton){
         //close 按钮是一个周围有空白的按钮，为了增大可触控区域，可以通过改变背景色看到
         x = self.frame.size.width - self.close.image.size.width -  2* COMMON_PADDING;
         self.close.frame = CGRectMake(x,y - COMMON_PADDING,self.close.image.size.width+2* COMMON_PADDING,self.close.image.size.height+2* COMMON_PADDING);
+    }else{
+        self.close.frame = CGRectMake(- 10000,-10000,0,0);
     }
     x = 0;
     y += h + y;
