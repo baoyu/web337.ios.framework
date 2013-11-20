@@ -656,6 +656,8 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     currentViewFrame.size.height = self.main.superview.frame.size.height;
     //内部的frame必须足够大，以容纳所有的元素。否则只能看见不能点
     self.currentView.frame = currentViewFrame;
+    self.currentView.withCloseButton = self.withCloseButton;
+    
     float height = [self.currentView resizeAndGetHeightInPortrait:inPortrait];
     currentViewFrame.size.height = height;
     self.currentView.frame = currentViewFrame;
