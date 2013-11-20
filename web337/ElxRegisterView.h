@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ElxButton.h"
 #import "ElxBaseView.h"
+
 @interface ElxRegisterView : ElxBaseView
+
+@property (retain,nonatomic) UITextField *username;
+@property (retain,nonatomic) UITextField *email;
+@property (retain,nonatomic) UITextField *password;
+@property (retain,nonatomic) UITextField *repassword;
+
+@property (retain,nonatomic) ElxButton *submitButton;
+@property (retain,nonatomic) ElxButton *backToLogin;
 
 @end
