@@ -46,6 +46,8 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 /*! @abstract 值为YES时打开GameCenter登陆的支持 */
 @property (assign,nonatomic,setter=setGameCenterSupport:) BOOL GameCenterSupport;
 
+/*! @abstract referer for analytic */
+@property (retain,nonatomic) NSString *referer;
 /*!
  @method
  

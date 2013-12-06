@@ -43,6 +43,7 @@ static NSString* const HTTP = @"http";
 static NSString* const HOST_WEB = @"web.337.com";
 static NSString* const URL_LOGIN = @"/user/mobilelogin";
 static NSString* const URL_REG = @"/user/mobileregister";
+static NSString* const URL_LOG = @"/mobile/log";
 static NSString* const URL_CHECKLOGIN = @"/user/mobileucheck";
 
 
@@ -343,6 +344,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     [_user release];
     [_loginView release];
     [_registerView release];
+    [_currentView release];
     [_main release];
     [super dealloc];
 }
@@ -624,6 +626,12 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 #pragma mark - Private Methods
 
+-(void)xaVisit:(NSString *)uid{
+    NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:uid,@"uid",self.referer,@"ref",nil];
+    [self requestApi:URL_LOG withParam:params onSuccess:^(NSObject *response, int code) {
+        NSLog(@"response :%@",response);
+    } onError:nil];
+}
 
 -(void)log:(NSString *)str{
     if(self.debug){
@@ -745,6 +753,9 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         [userData synchronize];
         //set user
         self.user = [[[ElxUser alloc]initWithDict:obj]autorelease];
+        
+        //打统计
+        [self xaVisit:self.user.uid];
     }
     localUserSetted = YES;
 }
