@@ -23,6 +23,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		FE7C091E1851CDC7009B7336 /* ElxXA.h in Headers */ = {isa = PBXBuildFile; fileRef = FE7C091C1851CDC7009B7336 /* ElxXA.h */; };
+		FE7C091F1851CDC7009B7336 /* ElxXA.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7C091D1851CDC7009B7336 /* ElxXA.m */; };
 		FE8DB453182255E0002098E3 /* ElxBaseView.h in Headers */ = {isa = PBXBuildFile; fileRef = FE8DB451182255E0002098E3 /* ElxBaseView.h */; };
 		FE8DB454182255E0002098E3 /* ElxBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8DB452182255E0002098E3 /* ElxBaseView.m */; };
 		FE8E32EB18234AFE001BD1BD /* 337_x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE8E32E918234AFE001BD1BD /* 337_x.png */; };
@@ -99,6 +101,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE7C091C1851CDC7009B7336 /* ElxXA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxXA.h; sourceTree = "<group>"; };
+		FE7C091D1851CDC7009B7336 /* ElxXA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxXA.m; sourceTree = "<group>"; };
 		FE8DB451182255E0002098E3 /* ElxBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElxBaseView.h; sourceTree = "<group>"; };
 		FE8DB452182255E0002098E3 /* ElxBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElxBaseView.m; sourceTree = "<group>"; };
 		FE8E32E918234AFE001BD1BD /* 337_x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 337_x.png; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 				FE954DD51820AD2400963142 /* ElxRegisterView.m */,
 				FE954DE01820E82500963142 /* ElxConfig.h */,
 				FE954DE11820E82500963142 /* ElxConfig.m */,
+				FE7C091C1851CDC7009B7336 /* ElxXA.h */,
+				FE7C091D1851CDC7009B7336 /* ElxXA.m */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 				FE8F91F61814CFF000304EDE /* web337.h in Headers */,
 				FE8F922E1814D7A900304EDE /* ElxError.h in Headers */,
 				FE954DE21820E82500963142 /* ElxConfig.h in Headers */,
+				FE7C091E1851CDC7009B7336 /* ElxXA.h in Headers */,
 				FE8F92531814D7C800304EDE /* ElxWeb337.h in Headers */,
 				FE8F922A1814D6EC00304EDE /* ElxUser.h in Headers */,
 				FE954DD21820AD1600963142 /* ElxLoginView.h in Headers */,
@@ -438,6 +445,7 @@
 			files = (
 				FE954DD71820AD2400963142 /* ElxRegisterView.m in Sources */,
 				FE8F924B1814D7BF00304EDE /* OHURLLoader.m in Sources */,
+				FE7C091F1851CDC7009B7336 /* ElxXA.m in Sources */,
 				FE8F92491814D7BF00304EDE /* MBProgressHUD.m in Sources */,
 				FE954DE31820E82500963142 /* ElxConfig.m in Sources */,
 				FE8DB454182255E0002098E3 /* ElxBaseView.m in Sources */,
