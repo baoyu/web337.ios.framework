@@ -108,7 +108,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  @param handler 回调函数
  */
 -(void)loginInView:(UIView *)view withCloseButton:(BOOL)withClose callback:(ElxLoginHandler)handler;
-
+ 
 /*!
  @method
  @abstract 后台使用用户名密码进行登陆。成功会返回用户信息，失败返回错误
