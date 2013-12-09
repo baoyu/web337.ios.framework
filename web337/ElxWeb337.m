@@ -27,7 +27,7 @@
 //
 #endif
 
-
+#import "ElxXA.h"
 //weak link to GameCenter
 
 #import <GameKit/GameKit.h>
@@ -698,6 +698,13 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         self.currentView = self.registerView;
     }
     
+    // xa log
+    if(self.type == ElxViewType_Login){
+        [ElxXA action:@"LoginShow"];
+    }else if(self.type == ElxViewType_Register){
+        [ElxXA action:@"RegisterShow"];
+    }
+    
     if([self.currentView superview] == nil){
         [self addSubview:self.currentView];
     }
@@ -800,6 +807,8 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 }
 
 -(void)_registerWithUsername:(NSString *)_username password:(NSString *)_password email:(NSString *) _email callback:(ElxLoginHandler)handler{
+    
+    [ElxXA action:@"RegisterShow.Register"];
     NSDictionary *params = [[NSDictionary alloc] initWithObjectsAndKeys:
                             _username,@"username",
                             _password,@"password",
@@ -818,15 +827,20 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
                 NSString * code = (NSString *)[obj objectForKey:@"error_code"];
                 NSString * message = (NSString *)[obj objectForKey:@"error_description"];
                 err = [ElxError code:code message:message];
+                [ElxXA action:@"RegisterShow.Register.Bad"];
+            }else{
+                [ElxXA action:@"RegisterShow.Register.OK"];
             }
         } else {
             err = [ElxError code:[NSString stringWithFormat:@"%d",code] message:[NSString stringWithFormat:@"Bad server response code:%d",code]];
+            [ElxXA action:@"RegisterShow.Register.Error"];
         }
         
         [self saveSession:obj];
         handler(self.user,err);
         
     } onError:^(ElxError * error){
+        [ElxXA action:@"RegisterShow.Register.Error"];
         //login 网络失败时也需要清除 session
         [self saveSession:nil];
         handler(nil,error);
