@@ -66,11 +66,29 @@
     @"Log in with Facebook",
 };
 
+static NSString *String_ko[] =
+{
+    @"ko",
+    @"로그인",//login
+    @"회원가입",//signup
+    @"확인",//submit
+    @"비밀번호 찾기",//forget
+    @"돌아가기",//login
+    @"아이디",//username
+    @"비밀번호",//password
+    @"비밀번호 확인",//repassword
+    @"이메일",//email
+    @"확인",//ok
+    @"%@을(를) 입력하세요.",
+    @"비밀번호가 일치하지 않습니다.",
+    @"페이스북으로 로그인하기",
+};
 
 typedef enum {
     Elx_Lang_unkonw,
     Elx_Lang_tw,
     Elx_Lang_zh,
+    Elx_Lang_ko,
     Elx_Lang_en,
 } ElxLang;
 
@@ -89,6 +107,8 @@ static ElxLang lang = Elx_Lang_unkonw;
         lang = Elx_Lang_zh;
     }else if([language isEqualToString:@"zh-Hant"]){
         lang = Elx_Lang_tw;
+    }else if([language isEqualToString:@"ko"]){
+        lang = Elx_Lang_ko;
     }else{
         lang = Elx_Lang_en;
     }
@@ -106,6 +126,9 @@ static ElxLang lang = Elx_Lang_unkonw;
             break;
         case Elx_Lang_tw:
             return String_tw[key];
+            break;
+        case Elx_Lang_ko:
+            return String_ko[key];
             break;
         default:
             return String_en[key];
