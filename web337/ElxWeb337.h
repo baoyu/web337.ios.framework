@@ -166,4 +166,4 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 @end
 
-#define WEB337_IOS_SDK_VERSION @"1.0.4"
+#define WEB337_IOS_SDK_VERSION @"1.0.5"

@@ -98,8 +98,13 @@ static ElxLang lang = Elx_Lang_unkonw;
 
 
 +(void)guessLang{
-    NSString * language = [[NSLocale preferredLanguages] objectAtIndex:0];
-    [ElxStrings setLang:language];
+    NSArray *langs = [NSLocale preferredLanguages];
+    if([langs count] == 0){
+        return [ElxStrings setLang:@"en"];
+    }else{
+        NSString * language = [langs objectAtIndex:0];
+        return [ElxStrings setLang:language];
+    }    
 }
 
 +(void)setLang:(NSString *)language{
