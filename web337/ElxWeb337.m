@@ -67,7 +67,7 @@ typedef void (^ElxHttpError)(ElxError *error);
 
 @interface ElxWeb337()<MBProgressHUDDelegate,ElxViewEventDelegate>
 
-@property (strong,nonatomic) ElxLoginHandler loginHandler;
+@property (copy,nonatomic) ElxLoginHandler loginHandler;
 
 @property (retain,nonatomic) UIView *main;
 
