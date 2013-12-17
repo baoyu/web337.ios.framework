@@ -44,9 +44,9 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 @property (assign,nonatomic,setter=setFacebookSupport:) BOOL FacebookSupport;
 
 /*! @abstract 值为YES时打开GameCenter登陆的支持 */
-@property (assign,nonatomic,setter=setGameCenterSupport:) BOOL GameCenterSupport;
+//@property (assign,nonatomic,setter=setGameCenterSupport:) BOOL GameCenterSupport;
 
-/*! @abstract referer for analytic */
+/*! @abstract 如果应用需要区分新用户来源，可设置referer。会体现在统计结果中 */
 @property (retain,nonatomic) NSString *referer;
 /*!
  @method
@@ -72,7 +72,9 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  https://web.337.com/user/mobileucheck?uid={$uid}&loginkey={$loginkey}
  
  需要注意的是，loginkey只在用户为337用户的时候才能够得到。
- 如果用户类型为facebook登陆，或gamecenter类型登陆的话。请通过相应方法获得登陆key自行验证
+ 如果用户为facebook登陆,请通过
+ [[FBSession activeSession]accessTokenData]
+ 方法得到access_token,并请求 https://graph.facebook.com/me?access_token={$access_token} 验证用户信息
  
  @param handler 回调方法
  */

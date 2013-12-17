@@ -104,7 +104,7 @@ BOOL localUserSetted = NO;
 @synthesize registerView = _registerView;
 @synthesize HUD = _HUD;
 
-@synthesize FacebookSupport = _FacebookSupport,GameCenterSupport = _GameCenterSupport;
+@synthesize FacebookSupport = _FacebookSupport;
 @synthesize withCloseButton,elementUp;
 
 
@@ -114,14 +114,6 @@ BOOL localUserSetted = NO;
     _FacebookSupport = s;
     if(self.loginView){
         self.loginView.FacebookSupport = self.FacebookSupport;
-    }
-}
-
-- (void)setGameCenterSupport:(BOOL)s {
-    [self log:[NSString stringWithFormat:@"set GameCenter Support  to %d",s]];
-    _GameCenterSupport = s;
-    if(self.loginView){
-        self.loginView.GameCenterSupport = self.GameCenterSupport;
     }
 }
 
@@ -237,36 +229,6 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
     
 }
 
-#pragma mark - GameCenter Login Support
-
-
-#ifdef SDK_GAMECENTER_ENABLE
-/**
- * 取gamecenter用户资料
- *
- */
--(NSDictionary *)getGameCenterUser{
-    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
-    if(localPlayer.authenticated){
-        //解析结果
-        return [NSDictionary dictionaryWithObjectsAndKeys:
-                localPlayer.playerID,@"uid",
-                localPlayer.playerID,@"identify_id",
-                localPlayer.alias,@"nickname",
-                [NSNumber numberWithInt:ElxUser_GAMECENTER], ELEX_337_TYPE,
-                nil];
-    }else{
-        return nil;
-    }
-}
-
--(void)gameCenterLogin{
-    
-}
-#endif
-
-
-
 #pragma mark - initialization & cleaning up
 - (id)init{
     NSLog(@"337 sdk version:%@",WEB337_IOS_SDK_VERSION);
@@ -322,13 +284,6 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         self.FacebookSupport = YES;
     }else{
         self.FacebookSupport = NO;
-    }
-    
-    //game center
-    if(NO){
-        self.GameCenterSupport = YES;
-    }else{
-        self.GameCenterSupport = NO;
     }
     
     self.Debug = NO;
