@@ -28,13 +28,7 @@
 #endif
 
 #import "ElxXA.h"
-//weak link to GameCenter
 
-#import <GameKit/GameKit.h>
-
-#ifdef SDK_GAMECENTER_ENABLE
-
-#endif
 
 
 

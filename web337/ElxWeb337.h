@@ -43,9 +43,6 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 /*! @abstract 值为YES时打开Facebook登陆的支持 */
 @property (assign,nonatomic,setter=setFacebookSupport:) BOOL FacebookSupport;
 
-/*! @abstract 值为YES时打开GameCenter登陆的支持 */
-//@property (assign,nonatomic,setter=setGameCenterSupport:) BOOL GameCenterSupport;
-
 /*! @abstract 如果应用需要区分新用户来源，可设置referer。会体现在统计结果中 */
 @property (retain,nonatomic) NSString *referer;
 /*!

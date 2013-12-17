@@ -34,11 +34,7 @@
             type = @"337 User";
             break;
         case ElxUser_FACEBOOK:
-        case ElxUser_FACEBOOK337:
             type = @"Facebook User";
-            break;
-        case ElxUser_GAMECENTER:
-            type = @"GameCenter User";
             break;
         default:
             type = @"Unknown User Type";

@@ -24,10 +24,6 @@ typedef enum {
     ElxUser_337,
     /*! facebook登录用户 */
     ElxUser_FACEBOOK,
-    /*! 表示facebook登录用户，同时授权了游戏app和337app. 目前只要用于占位 */
-    ElxUser_FACEBOOK337,//
-    /*! gamecenter用户 */
-    ElxUser_GAMECENTER,
 } ElxUserType;
 
 /*!
