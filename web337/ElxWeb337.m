@@ -360,9 +360,14 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 //显示登录窗口
 -(void)login:(ElxLoginHandler)handler{
-    UIView *top = [[UIApplication sharedApplication] keyWindow];
-    //UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
-    [self loginInView:top callback:handler];
+    UIViewController *rootVC = (UIViewController *)[[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+    [self loginInView:rootVC.view withCloseButton:NO callback:handler];
+}
+
+//显示登录窗口
+-(void)login:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose{
+    UIViewController *rootVC = (UIViewController *)[[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+    [self loginInView:rootVC.view withCloseButton:withClose callback:handler];
 }
 
 //在view中显示login窗口
@@ -390,9 +395,14 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 //在当前窗口中显示register
 -(void)openRegister:(ElxLoginHandler)handler{
-    UIView *currentWindow = [[UIApplication sharedApplication] keyWindow];
-    //UIWindow *currentWindow = [[[UIApplication sharedApplication] delegate] window];
-    [self openRegisterInView:currentWindow callback:handler];
+    UIViewController *rootVC = (UIViewController *)[[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+    [self openRegisterInView:rootVC.view withCloseButton:NO callback:handler];
+}
+
+//在当前窗口中显示register
+-(void)openRegister:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose{
+    UIViewController *rootVC = (UIViewController *)[[[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0] nextResponder];
+    [self openRegisterInView:rootVC.view withCloseButton:withClose callback:handler];
 }
 
 //在view中显示登录窗口

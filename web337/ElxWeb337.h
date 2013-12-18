@@ -79,13 +79,20 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 /*!
  @method
- @deprecated deprecated in 1.0.1
  @abstract 在当前窗口中显示Login。
- @discussion 这个方法在工作的时候，可能会出现UI布局错误，因此请使用 loginInView 方法
  
  @param handler 回调函数
  */
 -(void)login:(ElxLoginHandler)handler;
+
+/*!
+ @method
+ @abstract 在当前窗口中显示Login。
+ 
+ @param handler 回调函数
+ @param withCloseButton 是否显示关闭按钮
+ */
+-(void)login:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose;
 
 /*!
  @method
@@ -120,14 +127,20 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 /*!
  @method
- @deprecated deprecated in 1.0.1
  @abstract 直接打开注册的方法。
- @discussion 这个方法在工作的时候，可能会出现UI布局错误，因此请使用 openRegisterInView 方法
  
  @param handler 回调函数
  */
 -(void)openRegister:(ElxLoginHandler)handler;
 
+/*!
+ @method
+ @abstract 直接打开注册的方法。
+ 
+ @param handler 回调函数
+ @param withCloseButton 是否显示关闭按钮
+ */
+-(void)openRegister:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose;
 /*!
  @method
  @abstract 将注册窗口添加到view上
