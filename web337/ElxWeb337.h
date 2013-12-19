@@ -73,7 +73,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  [[FBSession activeSession]accessTokenData]
  方法得到access_token,并请求 https://graph.facebook.com/me?access_token={$access_token} 验证用户信息
  
- @param handler 回调方法
+ @return loginkey
  */
 -(NSString *)loginkey;
 
@@ -90,7 +90,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  @abstract 在当前窗口中显示Login。
  
  @param handler 回调函数
- @param withCloseButton 是否显示关闭按钮
+ @param withClose 是否显示关闭按钮
  */
 -(void)login:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose;
 
@@ -138,7 +138,7 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
  @abstract 直接打开注册的方法。
  
  @param handler 回调函数
- @param withCloseButton 是否显示关闭按钮
+ @param withClose 是否显示关闭按钮
  */
 -(void)openRegister:(ElxLoginHandler)handler withCloseButton:(BOOL)withClose;
 /*!

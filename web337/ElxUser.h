@@ -9,22 +9,18 @@
 #import <Foundation/Foundation.h>
 
 /*!
- @typedef ElxUserType enum
- 
- @abstract
- 用户类型定义
- 
- @discussion
+@abstract 用户类型定义
+@discussion
  用户可能通过登陆页面从多个渠道完成登陆信息， 可以通过ElxUser.type来判断具体渠道
  */
-typedef enum {
+typedef NS_ENUM(NSInteger,ElxUserType) {
     /*! 未知类型 或程序bug造成的 未设定值 */
     ElxUser_UNKNOWN,
     /*! 337官网用户 */
     ElxUser_337,
     /*! facebook登录用户 */
     ElxUser_FACEBOOK,
-} ElxUserType;
+};
 
 /*!
  @class ElxUser
@@ -70,8 +66,14 @@ typedef enum {
 @property (assign,nonatomic) int vip;
 /*! @abstract vip过期时间 */
 @property (assign,nonatomic) int vipendtime;
-/*! @abstract 用户类型 @see ElxUserType  */
+/*! @abstract 用户类型  */
 @property (assign,nonatomic) ElxUserType type;
-
+/*!
+ @method
+ 
+ @abstract 初始化用户
+ 
+ @param dict 用户信息
+ */
 -(id)initWithDict:(NSDictionary*)dict;
 @end
