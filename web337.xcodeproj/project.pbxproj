@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
+		FE8D80431862DD0E00B6F637 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FE8D80441862DD0E00B6F637 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				FE8D80471862DD2600B6F637 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
 		FE8F91F81814D2DA00304EDE /* Framework */ = {
 			isa = PBXAggregateTarget;
 			buildConfigurationList = FE8F91F91814D2DA00304EDE /* Build configuration list for PBXAggregateTarget "Framework" */;
@@ -382,6 +393,7 @@
 				FE8F91CB1814CE3D00304EDE /* web337 */,
 				FE8F91F81814D2DA00304EDE /* Framework */,
 				FE8F92021814D45200304EDE /* web337Resources */,
+				FE8D80431862DD0E00B6F637 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -410,6 +422,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FE8D80471862DD2600B6F637 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"hahahah----\"\necho \"${BUILT_PRODUCTS_DIR}\"\necho  \"${SF_OTHER_BUILT_PRODUCTS_DIR}\"\n/usr/local/bin/appledoc \\\n--project-name \"${PROJECT_NAME}\" \\\n--project-company \"ElexTech\" \\\n--company-id \"com.337\" \\\n--output \"${BUILT_PRODUCTS_DIR}/${PROJECT_NAME}.doc\" \\\n--logformat xcode \\\n--no-repeat-first-par \\\n--keep-intermediate-files \\\n--no-warn-invalid-crossref \\\n--merge-categories \\\n--exit-threshold 2000 \\\n--ignore \"*.m\" \\\n--include \"${PROJECT_DIR}/${PROJECT_NAME}/ElxWeb337.h\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/ElxError.h\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/ElxUser.h\" \\\n\"${PROJECT_DIR}/${PROJECT_NAME}/ElxWeb337.h\"\n\n";
+		};
 		FE8F91F71814D19900304EDE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -494,6 +519,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FE8D80451862DD0E00B6F637 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FE8D80461862DD0E00B6F637 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		FE8F91ED1814CE3D00304EDE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -695,6 +734,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FE8D80441862DD0E00B6F637 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8D80451862DD0E00B6F637 /* Debug */,
+				FE8D80461862DD0E00B6F637 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FE8F91C71814CE3D00304EDE /* Build configuration list for PBXProject "web337" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
