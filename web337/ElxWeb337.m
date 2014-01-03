@@ -426,6 +426,13 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 //登出，同时清除session
 -(void)logout{
     [self saveSession:nil];
+    
+    //这句话清除Facebook的Session残余
+    Class FBSession = NSClassFromString(@"FBSession");
+    if(FBSession){
+        [[FBSession activeSession] closeAndClearTokenInformation];
+    }
+    
 }
 
 
