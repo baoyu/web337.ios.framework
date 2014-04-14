@@ -45,6 +45,44 @@ typedef void (^ElxIsLoginHandler)(ElxUser *user);
 
 /*! @abstract 如果应用需要区分新用户来源，可设置referer。会体现在统计结果中 */
 @property (retain,nonatomic) NSString *referer;
+
+/*!
+ @method
+ 
+ @abstract 启动方法
+ 
+ @discussion
+ 数据统计用
+ 
+ @param TDappId 统计项目id
+ @param channelId 渠道ID
+ */
+
++ (void)onStart:(NSString *)TDappId withChannelId:(NSString *)channelId;
+
+/*!
+ @method
+ 
+ @abstract 启动方法
+ 
+ @discussion
+ 数据统计用
+ 
+ @param TDappId 统计项目id
+ */
++ (void)onStart:(NSString *)TDappId;
+
+
+/*!
+ @method
+ 
+ @abstract 设置游戏服
+ 
+ @param gameServer 设置游戏服
+ */
+- (void)setGameServer:(NSString *)gameServer;
+
+
 /*!
  @method
  

@@ -22,6 +22,8 @@
 #import "MBProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
 
+#import "TalkingDataGA.h"
+
 //weak link to Facebook
 #ifdef SDK_FACEBOOK_ENABLE
 //
@@ -78,6 +80,8 @@ typedef void (^ElxHttpError)(ElxError *error);
 
 @property (assign,nonatomic) BOOL elementUp;
 
+@property (retain,nonatomic) TDGAAccount* tdUser;
+
 @end
 
 
@@ -101,6 +105,19 @@ BOOL localUserSetted = NO;
 @synthesize FacebookSupport = _FacebookSupport;
 @synthesize withCloseButton,elementUp;
 
+@synthesize tdUser = _tdUser;
+
++ (void)onStart:(NSString *)appId withChannelId:(NSString *)channelId{
+    [TalkingDataGA onStart:appId withChannelId:channelId];
+}
+
++ (void)onStart:(NSString *)appId{
+    [self onStart:appId withChannelId:nil];
+}
+
+- (void)setGameServer:(NSString *)gameServer{
+    [self.tdUser setGameServer:gameServer];
+}
 
 #pragma mark - 第三方登录 Support
 - (void)setFacebookSupport:(BOOL)s {
@@ -280,7 +297,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         self.FacebookSupport = NO;
     }
     
-    self.Debug = NO;
+    self.debug = NO;
     
     return self;
 }
@@ -289,6 +306,7 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 
 -(void)dealloc {
+    [_tdUser release];
     [_loginHandler release];
     [_user release];
     [_loginView release];
@@ -592,12 +610,23 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
 
 #pragma mark - Private Methods
 
+-(void)afterLogin:(ElxUser *)user{
+    [self TDGA:user];
+    [self xaVisit:user.uid];
+    //打统计
+}
+
 -(void)xaVisit:(NSString *)uid{
     NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:uid,@"uid",self.referer,@"ref",nil];
     [self requestApi:URL_LOG withParam:params onSuccess:^(NSObject *response, int code) {
         NSLog(@"response :%@",response);
     } onError:nil];
 }
+
+-(void)TDGA:(ElxUser *)user{
+    self.tdUser = [TDGAAccount setAccount:user.uid];
+}
+
 
 -(void)log:(NSString *)str{
     if(self.debug){
@@ -727,8 +756,8 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
         //set user
         self.user = [[[ElxUser alloc]initWithDict:obj]autorelease];
         
-        //打统计
-        [self xaVisit:self.user.uid];
+        [self afterLogin:self.user];
+        
     }
     localUserSetted = YES;
 }
