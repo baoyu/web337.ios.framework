@@ -20,6 +20,9 @@ Web337Example SDK.1.0.7
 
 更新历史：
 
+2014.4.16
+将facebook 取loginkey的流程统一
+
 2014.4.14
 接入talkingData
 
