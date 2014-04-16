@@ -739,7 +739,15 @@ static NSString *const FBPLISTDefaultReadPermissions = @"FacebookDefaultReadPerm
                                         [NSNumber numberWithInt:type], ELEX_337_TYPE,
                                         nil];
         //尝试设置loginkey
-        NSString *loginkey =[obj objectForKey:ELEX_337_LOGINKEY];
+        NSString *loginkey = nil;
+        
+        if(type == ElxUser_FACEBOOK){
+            Class FBSession = NSClassFromString(@"FBSession");
+            loginkey = [[[FBSession activeSession]accessTokenData] accessToken];
+        }else{
+            loginkey =[obj objectForKey:ELEX_337_LOGINKEY];
+        }
+        
         if(loginkey){
             [session setValue:loginkey forKey:ELEX_337_LOGINKEY];
         }
