@@ -1,4 +1,4 @@
-Web337Example SDK.1.0.7
+Web337Example SDK.1.0.9
 ==============
 
 1.使用web337 sdk 请将 web337.bundle和 web337.framework 拖入项目中
