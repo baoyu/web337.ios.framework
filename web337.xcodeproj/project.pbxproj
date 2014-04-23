@@ -172,6 +172,7 @@
 		FE97CEC918F3E61900B76A10 /* 337logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "337logo@2x.png"; sourceTree = "<group>"; };
 		FE97CECA18F3E61900B76A10 /* FBLoginViewButtonE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FBLoginViewButtonE.png; sourceTree = "<group>"; };
 		FE97CECB18F3E61900B76A10 /* FBLoginViewButtonE@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FBLoginViewButtonE@2x.png"; sourceTree = "<group>"; };
+		FED1142A18FBD51900F5E449 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +202,7 @@
 		FE8F91C31814CE3D00304EDE = {
 			isa = PBXGroup;
 			children = (
+				FED1142A18FBD51900F5E449 /* README.md */,
 				FE97CE9318F3A37900B76A10 /* libTalkingDataGA.a */,
 				FE97CE9418F3A37900B76A10 /* TalkingDataGA.h */,
 				FE8F91D11814CE3D00304EDE /* web337 */,
